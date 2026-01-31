@@ -6,11 +6,16 @@
     "primary": "#0D9373"
   },
   "navigation": {
-    "groups": [
+    "dropdowns": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "getting-started/greed"
+        "dropdown": "Untitled Dropdown",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/greed"
+            ]
+          }
         ]
       }
     ]

@@ -3,19 +3,14 @@
   "theme": "mint",
   "name": "Documentation",
   "colors": {
-    "primary": "#0D9373"
+    "primary": "#ccccff"
   },
   "navigation": {
-    "dropdowns": [
+    "groups": [
       {
-        "dropdown": "Untitled Dropdown",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "getting-started/greed"
-            ]
-          }
+        "group": "Introduction",
+        "pages": [
+          "getting-started/greed"
         ]
       }
     ]

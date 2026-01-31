@@ -3,7 +3,9 @@
   "theme": "mint",
   "name": "Documentation",
   "colors": {
-    "primary": "#ccccff"
+    "primary": "#ccccff",
+    "light": "#DEDEFF",
+    "dark": "#BCBCE3"
   },
   "navigation": {
     "groups": [
@@ -14,5 +16,6 @@
         ]
       }
     ]
-  }
+  },
+  "logo": "https://beta.greed.best/assets/brand/greed.png"
 }

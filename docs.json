@@ -43,5 +43,8 @@
   "thumbnails": {
     "appearance": "light",
     "background": "https://cdn.nest.rip/uploads/61343aa4-083d-4368-8fcd-b1e4ced98a99.png"
+  },
+  "appearance": {
+    "strict": true
   }
 }

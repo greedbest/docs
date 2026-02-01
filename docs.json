@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
-  "name": "Documentation",
+  "theme": "mint",
+  "name": "documentation",
   "colors": {
     "primary": "#ccccff",
     "light": "#DEDEFF",
@@ -17,10 +17,15 @@
       }
     ]
   },
-  "logo": "https://beta.greed.best/assets/brand/greed.png",
+  "logo": {
+    "light": "https://beta.greed.best/assets/brand/greed.png",
+    "dark": "https://beta.greed.best/assets/brand/greed.png",
+    "href": "https://greed.best"
+  },
   "footer": {
     "socials": {
       "discord": "https://discord.com/invite/greed"
     }
-  }
+  },
+  "favicon": "https://beta.greed.best/assets/brand/greed.png"
 }

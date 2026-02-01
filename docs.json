@@ -23,5 +23,13 @@
   "appearance": {
     "default": "dark",
     "strict": true
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Home",
+        "href": "https://greed.best"
+      }
+    ]
   }
 }

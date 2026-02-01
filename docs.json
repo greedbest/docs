@@ -36,8 +36,8 @@
   "favicon": "https://beta.greed.best/assets/brand/greed.png",
   "background": {
     "color": {
-      "light": "#dfdfff",
-      "dark": "#9595b8"
+      "light": "#FFFFFF",
+      "dark": "#000000"
     }
   }
 }

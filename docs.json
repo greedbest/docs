@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "almond",
   "name": "Documentation",
   "colors": {
     "primary": "#ccccff",
@@ -17,5 +17,10 @@
       }
     ]
   },
-  "logo": "https://beta.greed.best/assets/brand/greed.png"
+  "logo": "https://beta.greed.best/assets/brand/greed.png",
+  "footer": {
+    "socials": {
+      "discord": "https://discord.com/invite/greed"
+    }
+  }
 }

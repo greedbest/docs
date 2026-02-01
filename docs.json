@@ -10,7 +10,7 @@
   "navigation": {
     "groups": [
       {
-        "group": "Moderation",
+        "group": "Security",
         "pages": [
           "moderation/antinuke",
           "moderation/antiraid",

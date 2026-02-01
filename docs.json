@@ -38,10 +38,6 @@
     "color": {
       "light": "#FFFFFF",
       "dark": "#000000"
-    },
-    "image": {
-      "light": "https://cdn.nest.rip/uploads/61343aa4-083d-4368-8fcd-b1e4ced98a99.png",
-      "dark": "https://cdn.nest.rip/uploads/61343aa4-083d-4368-8fcd-b1e4ced98a99.png"
     }
   },
   "thumbnails": {

@@ -1,0 +1,84 @@
+---
+title: "Antinuke"
+description: "Set restrictions on your staff to prevent harm from being done on your server."
+---
+
+## What is antinuke?
+
+Antinuke is a system to automatically set a limit of the amount of actions your staff can do. If that limit is exceeded, the staff will be punished and you'll stay safe from any harmful actions done to your server.
+
+## Allowing users to edit the antinuke settings.
+
+Normally, only the **server owner** can manage the antinuke configuration. Using this feature, you can add other users to be able to configure the antinuke settings.
+
+<Warning>
+  This is a risky command, as this will allow the user to be able to completly change the antinuke configuration.
+</Warning>
+
+<CodeGroup>
+
+```javascript Command
+,antinuke admin add (user)
+```
+
+
+```javascript Example
+,antinuke admin add @fe3murs
+```
+
+</CodeGroup>
+
+To **remove** an antinuke admin, you simply use the `,antinuke admin remove` command.
+
+<CodeGroup>
+
+```javascript Command
+,antinuke admin remove (user)
+```
+
+
+```javascript Example
+,antinuke admin remove @fe3murs
+```
+
+</CodeGroup>
+
+You can quickly view all antinuke admins using the `,antinuke admin list` command.
+
+## Whitelisting users from the antinuke
+
+By default, **everyone** is subject to being affected by the antinuke. To exempt a user, simply whitelist them using the `,antinuke whitelist add` command.
+
+<Warning>
+  This is a risky command, as it allows the user to completly bypass all antinuke restrictions.
+</Warning>
+
+<CodeGroup>
+
+```javascript Command
+,antinuke whitelist add (user)
+```
+
+
+```javascript Example
+,antinuke whitelist add @fe3murs
+```
+
+</CodeGroup>
+
+To **remove** users from the whitelist, simply use the `,antinuke whitelist remove` command.
+
+<CodeGroup>
+
+```javascript Command
+,antinuke whitelist remove (user)
+```
+
+
+```javascript Example
+,antinuke whitelist remove @fe3murs
+```
+
+</CodeGroup>
+
+You can view all whitelisted users by using the `,antinuke whitelist list` command.

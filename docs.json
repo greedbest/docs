@@ -14,6 +14,12 @@
         "pages": [
           "introduction/greed"
         ]
+      },
+      {
+        "group": "Moderation",
+        "pages": [
+          "moderation/antinuke"
+        ]
       }
     ]
   },
@@ -27,5 +33,11 @@
       "discord": "https://discord.com/invite/greed"
     }
   },
-  "favicon": "https://beta.greed.best/assets/brand/greed.png"
+  "favicon": "https://beta.greed.best/assets/brand/greed.png",
+  "background": {
+    "color": {
+      "light": "#dfdfff",
+      "dark": "#9595b8"
+    }
+  }
 }

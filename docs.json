@@ -54,5 +54,8 @@
         "href": "https://discord.com/invite/greed"
       }
     ]
+  },
+  "styling": {
+    "codeblocks": "dark"
   }
 }

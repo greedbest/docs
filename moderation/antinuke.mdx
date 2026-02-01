@@ -86,4 +86,57 @@ You can view all whitelisted users by using the `,antinuke whitelist list` comma
 
 ## Configuring the antinuke
 
-Configure the antinuke simply by using these commands. Use `,antinuke` to view the antinuke settings at anytime.
+Configure the antinuke simply by using these commands. Use `,antinuke` to view the antinuke settings at anytime. **Make sure to toggle on antinuke using** `,antinuke toggle on` 
+
+### Setting up antinuke modules.
+
+Firstly, toggle your modules on.
+
+<CodeGroup>
+
+```javascript Command
+⁨,antinuke module toggle (module) (on/off)⁩
+```
+
+
+```javascript Example
+⁨,antinuke module toggle botadd on
+```
+
+</CodeGroup>
+
+Next, set the punishment for your modules.
+
+<CodeGroup>
+
+```javascript Command
+⁨⁨,antinuke module punishment (module) (punishment)
+```
+
+
+```javascript Example
+⁨⁨,antinuke module punishment botadd ban
+```
+
+</CodeGroup>
+
+Now, set the threshold.
+
+<Info>
+  A higher threshold means the user must do more of a specific action to trigger the antinuke.
+</Info>
+
+<CodeGroup>
+
+```javascript Command
+,antinuke module threshold (module) (threshold)
+```
+
+
+```javascript Example
+,antinuke module threshold botadd 5
+```
+
+</CodeGroup>
+
+If you want, you can view settings for a module using the command `,antinuke module settings (module)` 

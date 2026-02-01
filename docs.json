@@ -1,63 +1,24 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "greed",
+  "theme": "almond",
+  "name": "Documentation",
   "colors": {
     "primary": "#ccccff",
     "light": "#DEDEFF",
-    "dark": "#656594"
+    "dark": "#BCBCE3"
   },
   "navigation": {
     "groups": [
       {
-        "group": "greed",
+        "group": "Introduction",
         "pages": [
-          "introduction/greed"
-        ]
-      },
-      {
-        "group": "Moderation",
-        "pages": [
-          "moderation/antiraid",
-          "moderation/antinuke",
-          "moderation/moderation"
+          "getting-started/greed"
         ]
       }
     ]
   },
-  "logo": {
-    "light": "https://beta.greed.best/assets/brand/greed.png",
-    "dark": "https://beta.greed.best/assets/brand/greed.png",
-    "href": "https://greed.best"
-  },
-  "footer": {
-    "socials": {
-      "discord": "https://discord.com/invite/greed"
-    }
-  },
-  "favicon": "https://beta.greed.best/assets/brand/greed.png",
-  "background": {
-    "color": {
-      "light": "#FFFFFF",
-      "dark": "#000000"
-    }
-  },
-  "thumbnails": {
-    "appearance": "dark",
-    "background": "https://cdn.nest.rip/uploads/61343aa4-083d-4368-8fcd-b1e4ced98a99.png"
-  },
+  "logo": "https://beta.greed.best/assets/brand/greed.png",
   "appearance": {
-    "strict": false
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Discord Server",
-        "href": "https://discord.com/invite/greed"
-      }
-    ]
-  },
-  "styling": {
-    "codeblocks": "system"
+    "default": "dark"
   }
 }

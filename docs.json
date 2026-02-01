@@ -19,6 +19,7 @@
   },
   "logo": "https://beta.greed.best/assets/brand/greed.png",
   "appearance": {
-    "default": "dark"
+    "default": "dark",
+    "strict": true
   }
 }

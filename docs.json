@@ -18,7 +18,8 @@
       {
         "group": "Moderation",
         "pages": [
-          "moderation/antinuke"
+          "moderation/antinuke",
+          "moderation/moderation"
         ]
       }
     ]

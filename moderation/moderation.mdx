@@ -1,0 +1,89 @@
+---
+title: "Moderation"
+icon: "hammer"
+description: "A quick guide to setting up moderation for your server."
+---
+
+## Setup mute roles
+
+<Steps>
+  <Step title="Setup mute roles, jail, and logs.">
+    Use the `,setup` command to setup mute roles, jail, and logs
+  </Step>
+  <Step title="Check everything is completed.">
+    Make sure you have the **greed-mod** category, with the `#logs` and `#jail` channels.
+
+    <Info>
+      Jail is similar to mute, but it restricts the user from viewing all channels except the jail channel. All moderation actions by greed will show up in the logs channel.
+    </Info>
+  </Step>
+</Steps>
+
+Once completed, you will see some new roles aswell.
+
+**imute** - Restricts the user from uploading images in any channel
+
+**rmute** - Restricts the user from adding reactions or using external emoji.
+
+**Jailed** - Restricts the user from all channels except the jail channel
+
+- Renaming the jailed role can break jail, so it's recommend not to rename it.
+
+> To reset / delete the moderation roles, simply do the `,setup reset` command.
+
+## Moderation Messages
+
+The following actions can be edited:
+
+- `action` , `action`, `action` 
+
+<Info>
+  You can use embeds with variables in your messages
+</Info>
+
+Set the **DM** message.
+
+<CodeGroup>
+
+```javascript Command
+,invoke (action) dm (message)
+```
+
+
+```javascript Example
+,invoke ban dm you’ve been banned for {reason}.
+```
+
+</CodeGroup>
+
+Set the **response** message.
+
+<CodeGroup>
+
+```javascript Command
+,invoke (action) message (message)
+```
+
+
+``` Example
+,invoke ban message banned {user.mention} for {reason}
+```
+
+</CodeGroup>
+
+## Strip a user's dangerous permission roles.
+
+You can easily strip a user's dangerous permissions by using the strip command.
+
+<CodeGroup>
+
+```javascript Command
+,strip (user) [reason]
+```
+
+
+```javascript Example
+,strip @fe3murs being abusive
+```
+
+</CodeGroup>

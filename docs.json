@@ -31,5 +31,11 @@
         "href": "https://greed.best"
       }
     ]
+  },
+  "favicon": "https://beta.greed.best/assets/brand/greed.png",
+  "footer": {
+    "socials": {
+      "discord": "https://discord.com/invite/greed"
+    }
   }
 }

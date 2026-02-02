@@ -76,7 +76,7 @@
             "icon": "braces",
             "pages": [
               "resources/scripting/embeds",
-              "resources/scripting/variables",
+              "resources/scripting/vars",
               "resources/scripting/pagination"
             ]
           },

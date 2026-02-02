@@ -10,6 +10,12 @@
   "navigation": {
     "groups": [
       {
+        "group": "Getting Started",
+        "pages": [
+          "getting-started"
+        ]
+      },
+      {
         "group": "Security",
         "pages": [
           "moderation/antinuke",

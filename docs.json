@@ -30,7 +30,7 @@
         "pages": [
           {
             "group": "Roles",
-            "icon": "user-shield",
+            "icon": "shield-user",
             "pages": [
               "configuration/roles/booster",
               "configuration/roles/reaction",
@@ -39,7 +39,7 @@
           },
           {
             "group": "Messages",
-            "icon": "messages",
+            "icon": "messages-square",
             "pages": [
               "configuration/messages/system",
               "configuration/messages/responder",

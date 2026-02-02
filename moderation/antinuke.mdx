@@ -90,17 +90,46 @@ Configure the antinuke simply by using these commands. Use `,antinuke` to view t
 
 ## Setting up antinuke modules.
 
+Antinuke has various modules that you can configure to protect your server.
+
+### Available Modules
+
+<AccordionGroup>
+  <Accordion title="Administrative Actions">
+    - `guildupdate` - Prevent unauthorized changes to server settings
+    - `webhooks` - Prevent unauthorized webhook creation or usage
+    - `vanityurl` - Protect your server's vanity URL
+    - `integrationcreate`, `integrationupdate`, `integrationdelete` - Monitor integration changes
+  </Accordion>
+  <Accordion title="Member Management">
+    - `botadd` - Prevent unauthorized bot additions
+    - `kick` - Limit the amount of members staff can kick
+    - `ban` - Limit the amount of members staff can ban
+    - `memberprune` - Prevent unauthorized member pruning
+  </Accordion>
+  <Accordion title="Role and Channel Management">
+    - `rolecreate`, `roleupdate`, `roledelete` - Monitor role changes
+    - `channelcreate`, `channelupdate`, `channeldelete` - Monitor channel changes
+  </Accordion>
+  <Accordion title="Engagement and Media">
+    - `emojicreate`, `emojiupdate`, `emojidelete` - Monitor emoji changes
+    - `stickercreate`, `stickerupdate`, `stickerdelete` - Monitor sticker changes
+    - `soundboardcreate`, `soundboardupdate`, `soundboarddelete` - Monitor soundboard changes
+    - `invitecreate`, `invitedelete` - Monitor invite changes
+  </Accordion>
+</AccordionGroup>
+
 Firstly, toggle your modules on.
 
 <CodeGroup>
 
 ```javascript Command
-⁨,antinuke module toggle (module) (on/off)⁩
+,antinuke module (module) toggle (on/off)
 ```
 
 
 ```javascript Example
-⁨,antinuke module toggle botadd on
+,antinuke module botadd toggle on
 ```
 
 </CodeGroup>
@@ -110,12 +139,12 @@ Next, set the punishment for your modules.
 <CodeGroup>
 
 ```javascript Command
-⁨⁨,antinuke module punishment (module) (punishment)
+,antinuke module (module) punishment (punishment)
 ```
 
 
 ```javascript Example
-⁨⁨,antinuke module punishment botadd ban
+,antinuke module botadd punishment ban
 ```
 
 </CodeGroup>
@@ -129,14 +158,14 @@ Now, set the threshold.
 <CodeGroup>
 
 ```javascript Command
-,antinuke module threshold (module) (threshold)
+,antinuke module (module) threshold (threshold)
 ```
 
 
 ```javascript Example
-,antinuke module threshold botadd 5
+,antinuke module botadd threshold 5
 ```
 
 </CodeGroup>
 
-If you want, you can view settings for a module using the command `,antinuke module settings (module)`
+If you want, you can view settings for a module using the command `,antinuke module settings (module)` or simply `,antinuke (module)`.

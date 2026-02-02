@@ -13,3 +13,69 @@ Firstly, toggle on antiraid using the `,antiraid toggle on` command.
 <Warning>
   Antiraid is **not** like [antinuke](/moderation/antinuke) and can be edited by **anyone** with the `administrator` permission.
 </Warning>
+
+Antiraid consists of several modules that monitor join events to prevent raids.
+
+### Available Modules
+
+- **massjoin**: Detects when a large number of members join in a short period.
+- **avatar**: Detects members joining with the default Discord profile picture.
+- **newaccounts**: Detects members joining with accounts created very recently.
+
+### Module Configuration
+
+You can configure each module using the following commands:
+
+<CodeGroup>
+```javascript Toggle
+,antiraid module (module) toggle (on/off)
+```
+
+```javascript Threshold
+,antiraid module (module) threshold (value)
+```
+
+```javascript Punishment
+,antiraid module (module) punishment (action)
+```
+</CodeGroup>
+
+<Tip>
+  Example: `,antiraid module massjoin threshold 10` will trigger if 10 people join within the detection window.
+</Tip>
+
+## Lockdown
+
+If your server is under an active raid, you can use the lockdown command to quickly restrict access.
+
+<CodeGroup>
+```javascript Command
+,antiraid lockdown (on/off)
+```
+
+```javascript Example
+,antiraid lockdown on
+```
+</CodeGroup>
+
+## Logging
+
+It is highly recommended to set a log channel for antiraid to monitor its actions.
+
+```javascript
+,antiraid logs (channel)
+```
+
+## Whitelisting
+
+You can whitelist specific users or roles from being affected by the antiraid.
+
+<CodeGroup>
+```javascript Add
+,antiraid whitelist add (user/role)
+```
+
+```javascript Remove
+,antiraid whitelist remove (user/role)
+```
+</CodeGroup>

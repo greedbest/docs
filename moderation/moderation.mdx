@@ -7,83 +7,92 @@ description: "A quick guide to setting up moderation for your server."
 ## Setup mute roles
 
 <Steps>
-  <Step title="Setup mute roles, jail, and logs.">
-    Use the `,setup` command to setup mute roles, jail, and logs
+  <Step title="Run the setup command">
+    Use the `,setup` command to automatically configure your server's moderation environment.
   </Step>
-  <Step title="Check everything is completed.">
-    Make sure you have the **greed-mod** category, with the `#logs` and `#jail` channels.
+  <Step title="Verify created channels">
+    Greed will create a **greed-mod** category containing:
+    - `#logs`: Where all moderation actions are recorded.
+    - `#jail`: A restricted channel for jailed users.
 
     <Info>
-      Jail is similar to mute, but it restricts the user from viewing all channels except the jail channel. All moderation actions by greed will show up in the logs channel.
+      Jail is similar to mute, but it restricts the user from viewing all channels except the jail channel.
     </Info>
+  </Step>
+  <Step title="Verify created roles">
+    The following specialized roles will be created:
+    - **imute**: Restricts the user from uploading images.
+    - **rmute**: Restricts the user from adding reactions or using external emoji.
+    - **jailed**: Restricts the user from all channels except the jail channel.
+    
+    <Warning>
+      Do **not** rename the `jailed` role, as this can break the jail functionality.
+    </Warning>
   </Step>
 </Steps>
 
-Once completed, you will see some new roles aswell.
+> To reset or delete these roles and channels, use the `,setup reset` command.
 
-**imute** - Restricts the user from uploading images in any channel
+## Moderation Messages (Invoke)
 
-**rmute** - Restricts the user from adding reactions or using external emoji.
+The `invoke` system allows you to customize the messages Greed sends when moderation actions are taken.
 
-**jailed** - Restricts the user from all channels except the jail channel
+### Supported Actions
 
-- Renaming the jailed role can break jail, so it's recommend not to rename it.
+You can customize messages for:
+`ban`, `kick`, `timeout`, `softban`, `hardban`, `imute`, `rmute`, `untimeout`, `iunmute`, `runmute`
 
-> To reset / delete the moderation roles, simply do the `,setup reset` command.
-
-## Moderation Messages
-
-The following actions can be edited:
-
-- `ban`, `kick`, `timeout`, `softban`, `hardban`, `imute`, `rmute`, `untimeout`, `iunmute`, `runmute`
-
-<Info>
-  You can use embeds with variables in your messages
-</Info>
-
-Set the **DM** message.
+### Configuration Commands
 
 <CodeGroup>
-
-```javascript Command
+```javascript DM Message
 ,invoke (action) dm (message)
 ```
 
-
-```javascript Example
-,invoke ban dm you’ve been banned for {reason}.
-```
-
-</CodeGroup>
-
-Set the **response** message.
-
-<CodeGroup>
-
-```javascript Command
+```javascript Channel Response
 ,invoke (action) message (message)
 ```
-
-
-```javascript Example
-,invoke ban message banned {user.mention} for {reason}
-```
-
 </CodeGroup>
 
-## Strip a user's dangerous permission roles.
+### Message Variables
 
-You can easily strip a user's dangerous permissions by using the strip command.
+You can use the following variables in your messages:
+
+- `{user.mention}` - Mentions the user
+- `{user.name}` - The user's username
+- `{user.id}` - The user's ID
+- `{guild.name}` - The server name
+- `{reason}` - The reason provided for the action
+- `{moderator.name}` - The name of the moderator who took the action
+- `{moderator.mention}` - Mentions the moderator
+
+### Advanced Commands
+
+<AccordionGroup>
+  <Accordion title="View Configurations">
+    Use `,invoke list` or `,invoke settings` to see all your active message customizations.
+  </Accordion>
+  <Accordion title="Test Messages">
+    Use `,invoke test (action)` to see how your customized message looks.
+  </Accordion>
+  <Accordion title="Variables Reference">
+    Use `,invoke variables` to see a full list of available variables in-app.
+  </Accordion>
+  <Accordion title="Reset Configuration">
+    Use `,invoke reset (action)` to return a specific action to its default message.
+  </Accordion>
+</AccordionGroup>
+
+## Strip Permissions
+
+You can quickly remove a user's dangerous permissions (like Administrator or Manage Server) using the strip command.
 
 <CodeGroup>
-
 ```javascript Command
 ,strip (user) [reason]
 ```
 
-
 ```javascript Example
 ,strip @fe3murs being abusive
 ```
-
 </CodeGroup>

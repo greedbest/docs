@@ -95,6 +95,14 @@
       {
         "label": "Home",
         "href": "https://greed.best"
+      },
+      {
+        "label": "Dashboard",
+        "href": "https://greed.best/dashboard"
+      },
+      {
+        "label": "Discord",
+        "href": "https://discord.gg/greed"
       }
     ]
   },

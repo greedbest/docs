@@ -11,9 +11,11 @@
     "groups": [
       {
         "group": "Getting Started",
-        "pages": [
-          "getting-started"
-        ]
+        "pages": ["getting-started"]
+      },
+      {
+        "group": "Customization",
+        "pages": ["customization"]
       },
       {
         "group": "Security",

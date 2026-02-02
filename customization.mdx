@@ -1,0 +1,89 @@
+---
+title: "Customization"
+description: "Personalize greed's profile and your server branding with ease."
+icon: "paintbrush"
+---
+
+## Bot Customization
+
+You can personalize how greed looks and behaves in your server using the `,customize` command. These changes are server-specific, meaning greed can have a unique profile for every community.
+
+### Profile Settings
+
+<CodeGroup>
+```javascript Name
+,customize name (new name)
+```
+
+```javascript Avatar
+,customize avatar (url or attachment)
+```
+
+```javascript Banner
+,customize banner (url or attachment)
+```
+
+```javascript Bio
+,customize bio (new bio)
+```
+</CodeGroup>
+
+### Profile Presets
+
+Presets allow you to save and quickly switch between different bot profiles.
+
+<CodeGroup>
+```javascript Create
+,customize preset create (name)
+```
+
+```javascript Apply
+,customize preset apply (id or name)
+```
+
+```javascript List
+,customize preset list
+```
+
+```javascript Remove
+,customize preset remove (id or name)
+```
+</CodeGroup>
+
+<Info>
+  Use `,customize reset` to return greed to its default profile settings.
+</Info>
+
+## Server Branding
+
+Manage your server's appearance directly through greed using the `,set` command.
+
+<CodeGroup>
+```javascript Server Name
+,set name (new name)
+```
+
+```javascript Server Icon
+,set icon (url or attachment)
+```
+
+```javascript Server Banner
+,set banner (url or attachment)
+```
+
+```javascript Server Splash
+,set splash (url or attachment)
+```
+</CodeGroup>
+
+### Notifications
+
+You can also manage where Discord's system notifications are sent.
+
+```javascript
+,set system (channel)
+```
+
+<Tip>
+  You can use `,set notifications` to quickly toggle which system messages (like boost or join notifications) are sent by Discord.
+</Tip>

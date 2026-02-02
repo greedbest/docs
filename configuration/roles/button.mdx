@@ -1,16 +1,16 @@
 ---
 title: "Button Roles"
-description: "Modern, component-based role assignment using buttons."
-icon: "square-check"
+description: "Allow users to claim roles by clicking interactive buttons."
+icon: "rectangle-list"
 ---
 
 ## Overview
 
-Button roles provide a clean and interactive way for users to assign themselves roles. Unlike reactions, buttons don't clutter the bottom of a message and offer different styles and labels.
+Button roles are a modern, high-conversion way to handle self-assigning roles. Unlike reactions, buttons provide a clear call to action and support custom labels and styles.
 
-## Adding Button Roles
+## Creating Button Roles
 
-When adding a button role, you can customize the style, emoji, and label of the button.
+To create a button role, you must first have an existing message (sent by anyone) that the buttons will be attached to.
 
 <CodeGroup>
 ```javascript Syntax
@@ -18,44 +18,37 @@ When adding a button role, you can customize the style, emoji, and label of the 
 ```
 
 ```javascript Example
-,buttonrole add https://discord.com/channels/... @Announcements blurple :bell: Pings
+,buttonrole add https://discord.com/... @Announcements blurple :bell: Notify Me
 ```
 </CodeGroup>
 
+---
+
+## Customization Options
+
 ### Button Styles
-You can use the following styles for your buttons:
-- `blurple` (Primary)
-- `grey` or `gray` (Secondary)
-- `green` (Success)
-- `red` (Danger)
+You can customize the appearance of the button using these style names or colors:
+
+| Style | Color |
+| :--- | :--- |
+| `primary` / `blurple` | Blurple (Discord Blue) |
+| `secondary` / `grey` | Grey |
+| `success` / `green` | Green |
+| `danger` / `red` | Red |
+
+### Label & Emoji
+- **Label**: The text displayed on the button. If omitted, it defaults to the role's name.
+- **Emoji**: You can use standard or custom emojis on the button.
+
+---
+
+## Technical Details
+
+- **Limits**: Each message can have a maximum of **25 buttons**.
+- **Message Permissions**: greed must have permission to edit the message if it was sent by greed, or it must be a message that greed is "managing" via its own message link.
 
 ## Management Commands
-
-<AccordionGroup>
-  <Accordion title="Listing configurations">
-    View all active button roles in the server.
-    ```javascript
-    ,buttonrole list
-    ```
-  </Accordion>
-  <Accordion title="Removing a button">
-    Remove a specific role button from a message.
-    ```javascript
-    ,buttonrole remove (message_link) (role)
-    ```
-  </Accordion>
-  <Accordion title="Resetting a message">
-    Remove all button roles from a specific message.
-    ```javascript
-    ,buttonrole reset (message_link)
-    ```
-  </Accordion>
-</AccordionGroup>
-
-<Info>
-  You can add up to **25 buttons** to a single message.
-</Info>
-
-<Tip>
-  If you don't specify a label, greed will use the name of the role by default.
-</Tip>
+- `,buttonrole list`: View all messages that currently have button roles attached.
+- `,buttonrole remove (message_link) (role)`: Remove a specific role button.
+- `,buttonrole removeall (message_link)`: Clear all buttons from a message.
+- `,buttonrole reset`: Clear every button role configuration in the server.

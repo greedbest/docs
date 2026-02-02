@@ -45,36 +45,79 @@ Create your personalized role with a name and optional hex colors. greed support
 ```
 </CodeGroup>
 
-### Customizing appearance
-You can update your role's color, name, and icon at any time.
+## Management Commands
+
+### Role Customization
+Once your role is created, you can fine-tune it with these commands:
 
 <AccordionGroup>
-  <Accordion title="Changing the color">
-    Update your role color with one or more hex codes.
+  <Accordion title="Color & Gradients">
+    Change your role's color. Support for single hex codes or dual-color gradients.
     ```javascript
-    ,boosterrole color #DEDEFF
+    ,br color #ff0000
+    ,br color #ff0000 #0000ff
     ```
   </Accordion>
-  <Accordion title="Renaming the role">
-    Change the name of your personalized role.
+  <Accordion title="Renaming">
+    Update your role's name at any time.
     ```javascript
-    ,boosterrole rename New Name
+    ,br rename new name
     ```
   </Accordion>
-  <Accordion title="Setting an icon">
-    Set a custom icon for your role using an emoji or a direct image URL.
+  <Accordion title="Custom Icons">
+    Set a custom emoji or image as your role icon.
     ```javascript
-    ,boosterrole icon :greed:
+    ,br icon :emoji:
+    ```
+    <Tip>Run without an argument to reset the icon.</Tip>
+  </Accordion>
+  <Accordion title="Hoisting">
+    Choose whether your role is displayed separately from other members in the sidebar.
+    ```javascript
+    ,br hoist on/off
     ```
   </Accordion>
 </AccordionGroup>
 
-## Admin Commands
+### Social Features
+<Accordion title="Sharing your role">
+  You can grant your personalized booster role to friends!
+  ```javascript
+  ,br share @user
+  ```
+  <Info>By default, users can share their role with up to 5 people.</Info>
+</Accordion>
 
-Administrators can manage the booster role system using these subcommands:
+---
 
-- `,boosterrole list`: View all personalized roles in the server.
-- `,boosterrole sync`: Manually sync role permissions if needed.
+## Administrative Commands
+
+Commands for server staff to manage the booster role system globally.
+
+### System Management
+<AccordionGroup>
+  <Accordion title="Base Role & Syncing">
+    Set a "base" role that all booster roles will be positioned below in the hierarchy.
+    - Set base: `,br base @Role`
+    - Sync positions: `,br sync` (Ensures all booster roles are correctly ordered below the base)
+  </Accordion>
+  <Accordion title="Filtering & Names">
+    Prevent users from using specific words in their role names.
+    ```javascript
+    ,br filter add (word)
+    ```
+  </Accordion>
+  <Accordion title="Global Status">
+    Check how many booster roles exist and who owns them.
+    ```javascript
+    ,br list
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  Use `,br setup` for the initial configuration. Remember that greed requires **Manage Roles** permissions to manage booster roles.
+</Info>
 - `,boosterrole delete [user]`: Delete your own booster role or a specific user's booster role.
 - `,boosterrole disable`: Turn off the booster role system entirely.
 

@@ -6,11 +6,11 @@ icon: "face-smile"
 
 ## Overview
 
-Reaction triggers (also known as `autoreact`) allow greed to automatically add emojis to messages that match your defined keywords. This is great for highlighting certain topics or adding personality to your channels.
+Reaction triggers (also known as `autoreact`) allow greed to automatically add emojis to messages that match specific keywords. This is perfect for community memes, automated polling, or highlighting specific topics.
 
-## Adding a Trigger
+## Creating a Trigger
 
-Specify the keyword you want to watch for and the emoji greed should react with.
+Add a new trigger by specifying the keyword and the emoji(s) you want greed to add.
 
 <CodeGroup>
 ```javascript Syntax
@@ -18,44 +18,63 @@ Specify the keyword you want to watch for and the emoji greed should react with.
 ```
 
 ```javascript Example
-,autoreact add greed 💸
-,autoreact add "good morning" 🌅
+,autoreact add "good morning" ☕ ☀️
+,autoreact add greed 👍
 ```
 </CodeGroup>
 
 <Info>
-  Keywords with multiple words should be wrapped in "quotes".
+  **Multiple Emojis**: You can provide multiple emojis in a single trigger, and greed will add all of them.
 </Info>
 
-## Management Commands
+---
 
+## Behavior & Logic
+
+### Word Matching
 <AccordionGroup>
-  <Accordion title="Listing triggers">
-    View all active reaction triggers in your server.
+  <Accordion title="Partial Matching">
+    By default, greed will react if the keyword is found **anywhere** within the message content.
+  </Accordion>
+  <Accordion title="Exact Phrase (Quotes)">
+    If your keyword contains spaces (e.g., "hello world"), you **must** wrap it in "quotes" for it to be recognized as a single trigger.
+  </Accordion>
+</AccordionGroup>
+
+### Restrictions
+Whitelisting allows you to control where and for whom triggers are active.
+<AccordionGroup>
+  <Accordion title="Channel Whitelisting">
+    Limit autoreacts to specific channels. If no channels are added, they work globally.
     ```javascript
-    ,autoreact list
+    ,autoreact channels add #channel
+    ,autoreact channels remove #channel
+    ,autoreact channels list
     ```
   </Accordion>
-  <Accordion title="Removing a trigger">
-    Delete a specific trigger by keyword.
+  <Accordion title="Role Whitelisting">
+    Only react to messages from members with specific roles.
     ```javascript
-    ,autoreact remove (keyword)
-    ```
-  </Accordion>
-  <Accordion title="Restricting to channels">
-    Limit auto-reactions to certain channels.
-    ```javascript
-    ,autoreact channels add #general
-    ```
-  </Accordion>
-  <Accordion title="Restricting by roles">
-    Only react to messages from specific roles.
-    ```javascript
-    ,autoreact roles add @Member
+    ,autoreact roles add @Role
+    ,autoreact roles remove @Role
+    ,autoreact roles list
     ```
   </Accordion>
 </AccordionGroup>
 
-<Tip>
-  You can also use `,autoreact clear` to remove every trigger from the server at once.
-</Tip>
+---
+
+## Limits & Management
+
+### Server Limits
+- **Free**: Up to 50 reaction triggers per server.
+- **Premium**: Up to 500 reaction triggers per server.
+
+### Management Commands
+<AccordionGroup>
+  <Accordion title="Organization">
+    - `,autoreact list`: See all active triggers and their linked emojis.
+    - `,autoreact remove (keyword)`: Delete a specific trigger by its keyword.
+    - `,autoreact clear`: Remove all triggers from the server at once.
+  </Accordion>
+</AccordionGroup>

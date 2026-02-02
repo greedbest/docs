@@ -6,55 +6,67 @@ icon: "reply-all"
 
 ## Overview
 
-Auto responders allow greed to automatically reply to messages that contain specific keywords. This is perfect for FAQs, community memes, or helpful reminders.
+Auto responders allow greed to automatically reply to messages that contain specific keywords. This is a powerful tool for automated FAQs, community jokes, or server moderation warnings.
 
-## Creating an Auto Responder
+## Creating a Response
 
-To create a new responder, you'll need the trigger keyword and the response (text or embed).
+To create a new responder, you'll need the trigger keyword and the response (text, embed, or script).
 
 <CodeGroup>
 ```javascript Syntax
-,autoresponder add (trigger) (response)
+,autoresponder add (trigger) (response) [flags]
 ```
 
 ```javascript Example
-,autoresponder add !help Please check our #rules for more info!
+,autoresponder add !help Please check our #rules for more info! --reply
+,autoresponder add "ping" pong! --strict
 ```
 </CodeGroup>
 
-### Advanced Triggers
-- **Quotes**: If your trigger contains spaces, wrap it in "quotes".
-- **Variables**: You can use [dynamic variables](/resources/scripting/variables) in your responses.
+---
 
-## Management Commands
+## Trigger Logic & Flags
 
+You can fine-tune how sensitive your responder is and how it delivers the response.
+
+### Configuration Flags
+Add these at the end of your command:
 <AccordionGroup>
-  <Accordion title="Listing responders">
-    See all active auto responders in your server.
-    ```javascript
-    ,autoresponder list
-    ```
+  <Accordion title="--strict">
+    The responder will **only** trigger if the message content exactly matches the trigger keyword, with no other text around it.
   </Accordion>
-  <Accordion title="Removing a responder">
-    Delete a specific responder by its trigger.
-    ```javascript
-    ,autoresponder remove (trigger)
-    ```
-  </Accordion>
-  <Accordion title="Restricting to channels">
-    Limit auto responders to specific channels or ignore others.
-    ```javascript
-    ,autoresponder channels add #general
-    ```
-  </Accordion>
-  <Accordion title="Restricting by roles">
-    Only allow certain roles to trigger responders.
-    ```javascript
-    ,autoresponder roles add @Member
-    ```
+  <Accordion title="--reply">
+    greed will use the Discord "Reply" feature (mentioning the user) when delivering the response.
   </Accordion>
 </AccordionGroup>
 
-<Tip>
-  Auto responders support greed's full [scripting system](/resources/scripting), allowing for complex embeds and logic.
-</Tip>
+### Advanced Triggers
+<AccordionGroup>
+  <Accordion title="Multi-word triggers">
+    If your trigger keyword contains spaces, wrap it in "quotes" (e.g., `"good morning"`).
+  </Accordion>
+  <Accordion title="Dynamic Variables">
+    Use [scripting variables](/resources/scripting/variables) like `{user}`, `{channel}`, or `{guild}` in your responses to make them feel personal.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Management & Limits
+
+### Server Limits
+- **Free**: Up to 50 auto responders.
+- **Premium**: Up to 500 auto responders.
+
+### Management Commands
+<AccordionGroup>
+  <Accordion title="Control Commands">
+    - `,autoresponder list`: View all configured responders.
+    - `,autoresponder remove (trigger)`: Delete a specific responder.
+    - `,autoresponder clear`: Wipe all responders from the server.
+  </Accordion>
+  <Accordion title="Whitelisting">
+    - `,autoresponder channels add #channel`: Limit responders to specific channels.
+    - `,autoresponder roles add @Role`: Only trigger for users with specific roles.
+  </Accordion>
+</AccordionGroup>

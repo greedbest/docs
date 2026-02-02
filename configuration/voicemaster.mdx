@@ -6,11 +6,11 @@ icon: "microphone"
 
 ## Overview
 
-VoiceMaster allows members to create their own temporary voice channels by simply joining a designated "Join to Create" channel. Once created, the owner can manage their channel's name, limit, and visibility through commands or an interactive interface.
+VoiceMaster allows members to create their own temporary voice channels by simply joining a designated "Join to Create" channel. Once created, the owner has full control over the channel's privacy and settings via an interactive interface.
 
 ## Getting Started
 
-Set up the VoiceMaster system in your server with a single command.
+Set up VoiceMaster by creating the interface and the primary "Join to Create" channel.
 
 <CodeGroup>
 ```javascript Syntax
@@ -18,51 +18,65 @@ Set up the VoiceMaster system in your server with a single command.
 ```
 </CodeGroup>
 
-### What happens after setup?
-greed will create a new category containing:
-1. **Join to Create**: The trigger channel.
-2. **#interface**: A channel containing an interactive embed with buttons for easy control.
+Through the setup process, you will:
+1. Create a category for temporary channels.
+2. Link a "Join to Create" channel.
+3. Post an interactive interface for easy management.
 
-<Tip>
-  You can rename or move these channels at any time; greed will keep tracking them.
-</Tip>
+---
 
-## Customizing Your Channel
+## Management Interface
 
-When you are the owner of a temporary voice channel, you can use these commands (or the #interface buttons) to manage it.
+Every temporary channel owner can manage their VC using the buttons posted during setup or via commands.
+
+### Interaction Buttons
+Owners can interact with the VoiceMaster message to trigger these actions:
 
 <AccordionGroup>
-  <Accordion title="Renaming">
-    Change your channel's name.
-    ```javascript
-    ,voicemaster rename ethan's vc
-    ```
+  <Accordion title="Privacy Control">
+    - **Lock/Unlock**: Prevent visitors from joining or allow everyone back in.
+    - **Hide/Reveal**: Make the channel invisible in the sidebar or show it to everyone.
   </Accordion>
-  <Accordion title="User limit">
-    Set a cap on the number of members.
-    ```javascript
-    ,voicemaster limit 5
-    ```
+  <Accordion title="Channel Settings">
+    - **Rename**: Change the channel name instantly via a modal.
+    - **Limit (+/-)**: Increase or decrease the user limit of the channel (0-99).
   </Accordion>
-  <Accordion title="Privacy & Visibility">
-    - `,voicemaster lock`: Prevents new users from joining.
-    - `,voicemaster ghost`: Hides the channel from the list.
-    - `,voicemaster permit @user`: Allows someone to join your locked/ghosted channel.
-  </Accordion>
-  <Accordion title="Ownership">
-    - `,voicemaster claim`: Take ownership if the previous owner leaves.
-    - `,voicemaster transfer @user`: Give ownership to another member.
+  <Accordion title="Ownership & Info">
+    - **Claim**: If the owner leaves, another member in the channel can claim ownership.
+    - **Information**: View details about the current channel owner and settings.
+    - **Delete**: Manually delete the temporary channel.
   </Accordion>
 </AccordionGroup>
 
-## Server-wide Configuration
+---
 
-Administrators can set default settings for all new voice channels.
+## Configuration Commands
 
-- `,voicemaster default name {user}'s vc`: Change the default naming pattern.
-- `,voicemaster default bitrate 96`: Set the default audio quality.
-- `,voicemaster category Voice Channels`: Redirect new channels to a specific category.
+Administrators can customize the system-wide behavior of VoiceMaster using these subcommands.
+
+<AccordionGroup>
+  <Accordion title="Naming Templates (Premium)">
+    Set a default naming pattern for all new channels.
+    ```javascript
+    ,voicemaster template {owner}'s channel
+    ```
+    <Tip>Use `{owner}` to automatically insert the member's username.</Tip>
+    - Reset template: `,voicemaster template reset`
+  </Accordion>
+  <Accordion title="Default Permissions">
+    Set a specific role as the "default" visitor role for all new channels.
+    ```javascript
+    ,voicemaster default @Role
+    ```
+    - Reset default role: `,voicemaster default` (run without arguments)
+  </Accordion>
+  <Accordion title="Access Control">
+    Grant or revoke permissions for specific users.
+    - `,voicemaster permit @user`: Allow a user to join a locked channel.
+    - `,voicemaster reject @user`: Kick and ban a user from the channel.
+  </Accordion>
+</AccordionGroup>
 
 <Info>
-  Use `,voicemaster join role @Role` to automatically give a role to users when they join a voice channel. This is perfect for hiding the #interface channel unless a user is in a VC.
+  VoiceMaster requires **Manage Channels** and **Move Members** permissions to function correctly.
 </Info>

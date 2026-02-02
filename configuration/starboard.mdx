@@ -6,20 +6,20 @@ icon: "star"
 
 ## Overview
 
-The starboard is a community-driven highlighting system. When a message receives enough reactions (stars, clowns, etc.), greed will repost it to a designated channel. This is perfect for preserving funny moments or important announcements.
+The starboard is a community-driven highlighting system. When a message receives enough reactions (stars, or any emoji you choose), greed reposts it to a designated gallery channel.
 
 ## Getting Started
 
-To create a starboard, you need to specify the channel, the emoji to watch for, and the number of reactions required.
+Create a new starboard by specifying the emoji to track and the channel where highlighted messages should be posted.
 
 <CodeGroup>
 ```javascript Syntax
-,starboard add (channel) (emoji) (threshold)
+,starboard add (emoji) #channel
 ```
 
 ```javascript Example
-,starboard add #starboard ⭐ 3
-,starboard add #clownboard 🤡 5
+,starboard add ⭐ #starboard
+,starboard add :clown: #clownboard
 ```
 </CodeGroup>
 
@@ -27,58 +27,43 @@ To create a starboard, you need to specify the channel, the emoji to watch for, 
   greed supports multiple starboards per server! You can have one for stars, one for clowns, and even one for custom emojis.
 </Tip>
 
-## Management Commands
+---
 
-### Viewing configurations
-View all active starboards and their settings.
-```javascript
-,starboard list
-```
+## Configuration & Appearance
 
-### Removing a starboard
-Delete a starboard by specifying its emoji.
-```javascript
-,starboard remove (emoji)
-```
+Customize how starboard messages look and which data they include.
 
-### Ignoring content
-Prevent specific channels, roles, or users from appearing on the starboard.
-```javascript
-,starboard ignore #staff-chat
-,starboard unignore @Developer
-```
-
-## Customizing the Embed
-
-You can fine-tune how messages look when they are reposted to the starboard.
-
+### Appearance Settings
 <AccordionGroup>
-  <Accordion title="Embed color">
-    Change the color of the reposted embed.
-    ```javascript
-    ,starboard color #cf7c08
-    ```
+  <Accordion title="Visuals">
+    - `,starboard color (emoji) (hex)`: Set a custom embed color for specific starboards.
+    - **Star Leveling**: For the default ⭐ emoji, the reaction emoji in the repost automatically upgrades as stars increase:
+        - 1-4 ⭐: `⭐`
+        - 5-9 ⭐: `🌟`
+        - 10-24 ⭐: `💫`
+        - 25+ ⭐: `✨`
   </Accordion>
-  <Accordion title="Toggle timestamp">
-    Show or hide the message timestamp.
-    ```javascript
-    ,starboard timestamp off
-    ```
-  </Accordion>
-  <Accordion title="Toggle jump URL">
-    Include or exclude the direct link to the original message.
-    ```javascript
-    ,starboard jumpurl on
-    ```
-  </Accordion>
-  <Accordion title="Toggle attachments">
-    Choose whether to include images and files in the repost.
-    ```javascript
-    ,starboard attachments off
-    ```
+  <Accordion title="Message Toggles">
+    Control what information is displayed in each starboard repost:
+    - `,starboard jumpurl`: Toggle the "Jump to message" link.
+    - `,starboard timestamp`: Toggle the creation timestamp display.
+    - `,starboard attachments`: Toggle whether images/videos are included.
   </Accordion>
 </AccordionGroup>
 
-<Info>
-  Use `,starboard move` to reorder priorities if you have multiple starboards watching for the same emoji.
-</Info>
+---
+
+## Management
+
+### Advanced Commands
+<AccordionGroup>
+  <Accordion title="Channel Management">
+    - `,starboard move (emoji) #new-channel`: Change which channel a starboard posts to without resetting it.
+    - `,starboard ignore #channel`: Prevent messages in specific channels from being starred.
+    - `,starboard unignore #channel`: Resume tracking for a previously ignored channel.
+  </Accordion>
+  <Accordion title="Maintenance">
+    - `,starboard list`: See all active starboards and their configurations.
+    - `,starboard remove (emoji)`: Delete a specific starboard by its emoji.
+  </Accordion>
+</AccordionGroup>

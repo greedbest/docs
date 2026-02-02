@@ -6,11 +6,11 @@ icon: "hand-peace"
 
 ## Overview
 
-greed's bump reminder helps your server stay at the top of DISBOARD by sending a reminder message exactly 2 hours after a successful `/bump`. It also includes a "thank you" system and a leaderboard to encourage activity.
+greed's bump reminder helps your server stay at the top of DISBOARD by sending a reminder exactly 2 hours after a successful bump. It also tracks contributor stats to reward your most active members.
 
 ## Getting Started
 
-Enable the bump reminder system in your server.
+Enable the reminder in the channel where the DISBOARD bot works.
 
 <CodeGroup>
 ```javascript Syntax
@@ -18,44 +18,52 @@ Enable the bump reminder system in your server.
 ```
 </CodeGroup>
 
-<Info>
-  greed automatically detects successful bumps from DISBOARD. You don't need to configure anything else to start tracking.
-</Info>
+Once enabled, greed will watch for the DISBOARD bot's success message (`Bump done!`) and automatically start a 2-hour countdown.
+
+---
 
 ## Customization
 
-### Reminder Message
-Customize the message greed sends when it's time to bump.
-```javascript
-,bumpreminder reminder It's time to bump the server! Type `/bump` to help us grow.
-```
+### Reminder Scripts
+<AccordionGroup>
+  <Accordion title="The Reminder Message">
+    Customize what greed says when it's time to bump again.
+    ```javascript
+    ,bumpreminder reminder It's time to bump! Use **/bump** to help us grow.
+    ```
+  </Accordion>
+  <Accordion title="The Thank You Message">
+    Send a custom message immediately after someone successfully bumps. Supports full [Scripting](/resources/scripting/variables).
+    ```javascript
+    ,bumpreminder thankyou {embed}{description: Thanks {user}! You've bumped {bumps} times!}
+    ```
+  </Accordion>
+</AccordionGroup>
 
-### Thank You Message
-Customize the message greed sends immediately after someone successfully bumps.
-```javascript
-,bumpreminder thankyou Thanks for bumping, {user}! You now have {bumps} total bumps.
-```
+---
 
-## Management & Stats
+## Tracking & Stats
 
-### Viewing Status
-Check the current settings and time remaining until the next bump.
-```javascript
-,bumpreminder view
-```
+Manage your community's bump contributions.
 
-### Leaderboard
-See who the top bumpers are in your community.
-```javascript
-,bumpreminder leaderboard
-```
+<AccordionGroup>
+  <Accordion title="Competition (Leaderboards)">
+    See who has contributed the most bumps to the server.
+    - `,bumpreminder leaderboard`: View the top pumpers.
+    - *Alias: ,br lb*
+  </Accordion>
+  <Accordion title="Personal Stats">
+    Track individual contributions.
+    - `,bumpreminder view [@user]`: See total bumps for yourself or another member.
+  </Accordion>
+</AccordionGroup>
 
-### Testing
-Send a test reminder to see how it looks in the current channel.
-```javascript
-,bumpreminder test
-```
+---
 
-<Tip>
-  Use `,bumpreminder disable` to turn off the system entirely.
-</Tip>
+## Management Commands
+<AccordionGroup>
+  <Accordion title="Control & Debug">
+    - `,bumpreminder disable`: Turn off the bump reminder system entirely.
+    - `,bumpreminder test`: Manually trigger the reminder to check your configuration.
+  </Accordion>
+</AccordionGroup>

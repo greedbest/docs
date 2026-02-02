@@ -8,19 +8,23 @@ icon: "fingerprint"
 
 Reaction roles are an easy way for users to pick up roles for notifications, colors, or access to different parts of your server.
 
-## Setting up Reaction Roles
+## Configuration
 
-To set up a reaction role, you'll need the link to the message you want people to react to, the emoji they should react with, and the role they will receive.
+To set up a reaction role, you need a message link, the emoji, and the role name.
 
 <CodeGroup>
 ```javascript Syntax
-,reactionrole add (message_link) (emoji) (role)
+,reactionrole add (message_link) (emoji) (@role)
 ```
 
 ```javascript Example
 ,reactionrole add https://discord.com/channels/... :verified: @Member
 ```
 </CodeGroup>
+
+<Info>
+  You can add **multiple different emojis** to the same message to create a full reaction-based menu. Each emoji can be linked to a different role.
+</Info>
 
 <Info>
   The message link can be obtained by right-clicking a message and selecting **Copy Message Link**.

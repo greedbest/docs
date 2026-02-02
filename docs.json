@@ -73,7 +73,7 @@
         "pages": [
           {
             "group": "Scripting",
-            "icon": "file-braces",
+            "icon": "braces",
             "pages": [
               "resources/scripting/embeds",
               "resources/scripting/variables",

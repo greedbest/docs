@@ -1,0 +1,72 @@
+---
+title: "Giveaways"
+description: "Host engagement-driven giveaways with role requirements and custom prizes."
+icon: "gift"
+---
+
+## Overview
+
+greed's giveaway system is built for high engagement. It supports buttons for easy entry, role-based requirements, and full customization of the giveaway embed.
+
+## Starting a Giveaway
+
+Create a giveaway by specifying the duration, winner count, and the prize.
+
+<CodeGroup>
+```javascript Syntax
+,giveaway start (duration) (winners) (prize) [--role @Role]
+```
+
+```javascript Example
+,giveaway start 1h 2 Nitro --role @Supporter
+```
+</CodeGroup>
+
+<Info>
+  **Role Requirements**: Use the `--role` flag to restrict the giveaway to members with a specific role.
+</Info>
+
+---
+
+## Giveaway Management
+
+Control your active giveaways with these subcommands.
+
+### Basic Controls
+<AccordionGroup>
+  <Accordion title="Ending & Rerolling">
+    - `,giveaway end (message_id)`: Force a giveaway to end immediately.
+    - `,giveaway reroll (message_id)`: Pick new winners for a finished giveaway.
+  </Accordion>
+  <Accordion title="User Restrictions">
+    - `,giveaway blacklist @user`: Prevent a specific user from entering giveaways.
+    - `,giveaway setmax (count)`: Limit how many giveaways a user can win in a certain timeframe.
+  </Accordion>
+</AccordionGroup>
+
+### Editing Giveaways
+You can modify an active giveaway's details without needing to restart it.
+
+<AccordionGroup>
+  <Accordion title="Core Details">
+    - `,giveaway edit prize (message_id) (new prize)`: Update the prize description.
+    - `,giveaway edit winners (message_id) (count)`: Change the number of winners to be selected.
+    - `,giveaway edit duration (message_id) (new duration)`: Adjust the time remaining.
+  </Accordion>
+  <Accordion title="Visuals & Text">
+    - `,giveaway edit description (message_id) (text)`: Add or change the giveaway description.
+    - `,giveaway edit image/thumbnail (message_id) (url)`: Customize the giveaway visuals.
+  </Accordion>
+  <Accordion title="Level Requirements">
+    - `,giveaway edit minlevel (message_id) (level)`: Set a minimum level requirement to join.
+    - `,giveaway edit maxlevel (message_id) (level)`: Set a maximum level limit for entry.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Technical Details
+
+- **Participation**: Users enter by clicking the "Enter" button on the giveaway message.
+- **Winner Selection**: greed uses a cryptographically secure random number generator to ensure fair winners.
+- **Notifications**: greed can DM the giveaway creator and the winners when the giveaway ends.

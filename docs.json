@@ -57,6 +57,16 @@
           "configuration/command-aliases",
           "configuration/logging"
         ]
+      },
+      {
+        "group": "Miscellaneous",
+        "pages": [
+          "miscellaneous/music",
+          "miscellaneous/giveaway",
+          "miscellaneous/counting",
+          "miscellaneous/lastfm",
+          "miscellaneous/utility"
+        ]
       }
     ]
   },

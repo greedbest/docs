@@ -1,0 +1,38 @@
+---
+title: "Counting"
+description: "A simple, addictive counting game for your server."
+icon: "hash"
+---
+
+## Overview
+
+The counting system turns a channel into a cooperative game where members take turns counting up. It's a great way to increase engagement and keep your community active.
+
+## Getting Started
+
+Enable counting in the current channel. greed will immediately start the count at `1`.
+
+<CodeGroup>
+```javascript Enable
+,counter enable
+```
+</CodeGroup>
+
+Once enabled, greed will automatically react with ✅ to correct numbers and ❌ to incorrect ones.
+
+---
+
+## Rules of the Game
+
+- **Sequential Counting**: Numbers must be sent in order (1, 2, 3...).
+- **No Double Counting**: The same user cannot send two numbers in a row.
+- **Mistakes**: If someone sends a wrong number or counts twice, the count is reset to `1`.
+
+## Management
+
+### Configuration
+- `,counter disable`: Turn off counting in the current channel.
+- `,counter reset`: Manually reset the current count.
+
+### High Scores
+greed tracks your server's highest count reached! Try to beat your record as a community.

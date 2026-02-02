@@ -1,0 +1,61 @@
+---
+title: "Last.fm"
+description: "Track your music habits and share your top charts with the community."
+icon: "headphones"
+---
+
+## Overview
+
+greed's Last.fm integration allows you to scrobble tracks played through the bot and showcase your listening history. From detailed collages to server-wide "Who Knows" rankings, it's a must-have for music enthusiasts.
+
+## Getting Started
+
+To use Last.fm features, you must first link your account.
+
+<CodeGroup>
+```javascript Link Account
+,lf login
+```
+
+```javascript Set Username
+,lf set (username)
+```
+</CodeGroup>
+
+Once linked, greed will automatically track (scrobble) songs you play using the Music system.
+
+---
+
+## Social Features
+
+Show off your music taste and compete with other server members.
+
+<AccordionGroup>
+  <Accordion title="Now Playing">
+    - `,fm`: See what you are currently listening to.
+    - `,nowplaying`: A more detailed view of your current track.
+  </Accordion>
+  <Accordion title="Charts & Collages">
+    Generate beautiful visual representations of your listening habits.
+    - `,lf collage`: Create a grid of your top album covers.
+    - `,lf topartists`: View your most-listled-to artists.
+    - `,lf topalbums`: View your most-listened-to albums.
+  </Accordion>
+  <Accordion title="Competition (Who Knows)">
+    Find out who the biggest fan of an artist is in your server.
+    - `,whoknows (artist)`: See the leaderboard for a specific artist.
+    - `,mostcrowns`: See who holds the most "Who Knows" top spots.
+  </Accordion>
+  <Accordion title="Interactions">
+    - `,taste @user`: Compare your music taste with another member.
+    - `,steal @user`: Quickly set your Last.fm username to match another user's (if they have it set).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Formatting
+
+You can customize how your Last.fm data is displayed using custom embeds and variables.
+- `,lf embed`: Modify the look of your `,fm` command.
+- `,lf variables`: View all available placeholders for custom Last.fm embeds.

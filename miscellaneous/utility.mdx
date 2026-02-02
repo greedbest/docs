@@ -1,0 +1,50 @@
+---
+title: "Utility"
+description: "A suite of practical tools for everyday server tasks."
+icon: "wrench"
+---
+
+## Overview
+
+greed provides a collection of utility commands to help with everything from translation to quick calculations. These tools are designed to keep users engaged within your server.
+
+## Practical Tools
+
+<AccordionGroup>
+  <Accordion title="AI & Information">
+    - `,ask (question)`: Query an AI to get answers to your questions directly in Discord.
+    - `,calculate (expression)`: A powerful calculator for math equations.
+    - `,translate (text)`: Automatically detect and translate text to English.
+  </Accordion>
+  <Accordion title="Organization">
+    - `,reminder (time) (reason)`: Set a personal timer to remind you of tasks.
+    - `,stickymessage (message)`: Keep a specific message at the very bottom of a channel.
+    - `,timer (duration) (channel) (message)`: Schedule a one-time message to be sent later.
+  </Accordion>
+  <Accordion title="Server Interaction">
+    - `,poll (question) | (option 1) | (option 2)`: Create reaction-based polls.
+    - `,confessions`: Set up a channel for anonymous user messages.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Embed Builder
+
+greed includes a comprehensive embed builder for creating professional-looking announcements and messages.
+
+```javascript
+,createembed {embed}{title: Welcome!}{description: This is a custom embed!}
+```
+
+<Tip>
+  For a full list of embed variables and flags, check out the [Scripting](/resources/scripting/variables) section.
+</Tip>
+
+---
+
+## Other Features
+
+- **Emoji Management**: Use `,emoji steal (emoji)` to quickly add emojis from other servers to your own.
+- **Birthdays**: Use `,birthday set (date)` to have greed announce your birthday in the server.
+- **Solved Threads**: Use `,solved` in help channels to automatically mark threads as completed and close them.

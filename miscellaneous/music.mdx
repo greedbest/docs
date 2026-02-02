@@ -1,0 +1,70 @@
+---
+title: "Music"
+description: "High-quality audio playback and DJ controls for your server."
+icon: "music"
+---
+
+## Overview
+
+greed features a powerful music system that allows you to play high-quality audio from various sources. With support for queues, playlists, and DJ roles, you can easily manage the vibe of your voice channels.
+
+## Core Commands
+
+Get started by joining a voice channel and playing your favorite tracks.
+
+<CodeGroup>
+```javascript Play
+,play (query or URL)
+```
+
+```javascript Skip
+,skip
+```
+
+```javascript Queue
+,queue
+```
+
+```javascript Volume
+,volume (0-200)
+```
+</CodeGroup>
+
+---
+
+## Playback Controls
+
+<AccordionGroup>
+  <Accordion title="Basic Controls">
+    - `,pause`: Pause the current track.
+    - `,resume`: Continue playing a paused track.
+    - `,stop`: Stop the music and clear the queue.
+  </Accordion>
+  <Accordion title="Queue Management">
+    - `,queue`: View all tracks currently in the queue.
+    - `,clearqueue`: Remove all pending tracks.
+    - `,shuffle`: Randomize the order of the queue.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## DJ & Advanced Settings
+
+Restrict music controls and enable smart features via the settings system.
+
+### DJ Role
+Set a role that is required to use music commands.
+```javascript Syntax
+,settings dj (role)
+```
+<Tip>Requires **Manage Server** permissions to configure.</Tip>
+
+### Autoplay
+Enabling autoplay will automatically add similar tracks to the queue when the current one ends.
+```javascript Syntax
+,settings autoplay on/off
+```
+
+### Inactivity Timer
+greed will automatically leave the voice channel if no music is playing and the channel is empty to save resources and keep your server clean.

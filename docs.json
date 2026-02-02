@@ -7,6 +7,9 @@
     "light": "#DEDEFF",
     "dark": "#BCBCE3"
   },
+  "icons": {
+    "library": "lucide"
+  },
   "navigation": {
     "groups": [
       {

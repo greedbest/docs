@@ -1,0 +1,85 @@
+---
+title: Embeds
+description: "Master the fundamentals of Greed's custom embed scripting."
+icon: brackets-curly
+---
+
+## Core Structure
+
+Greed uses a specialized token-based system for building embeds. Each component is defined within braces `{}` and follows a `key: value` pattern.
+
+The syntax for a standard parameter is:
+- `{` - Opens the parameter block.
+- `key:` - Identifies the property (e.g., `title`, `description`).
+- `value` - The content or configuration for that property.
+- `}` - Closes the parameter block.
+
+### Block Separators
+
+To organize your script or separate individual embed properties, you can use `$v`. In Greed's engine, this acts as a newline separator, allowing the parser to clearly distinguish between different nodes.
+
+```javascript Example
+{title: Hello World}$v{description: This is a custom embed!}
+```
+
+## Available Parameters
+
+Most parameters take a simple text or URL value.
+
+| Key | Description | Example |
+| :--- | :--- | :--- |
+| `content` | Plain text message outside the embed. | `{content: Hello {user}}` |
+| `title` | The main title of the embed. | `{title: Server News}` |
+| `description` | The body text of the embed. | `{description: Join our Discord!}` |
+| `color` | The sidebar color (Hex or Decimal). | `{color: #ccccff}` |
+| `url` | Makes the title a clickable link. | `{url: https://greed.best}` |
+| `image` | A large image at the bottom. | `{image: https://.../img.png}` |
+| `thumbnail` | A small image in the top right. | `{thumbnail: https://.../icon.png}` |
+| `timestamp` | Adds the current time to the footer. | `{timestamp}` |
+
+### Advanced Parameters
+
+Some parameters support multiple values separated by `&&`.
+
+<AccordionGroup>
+    <Accordion title="Author">
+        Set the name, icon, and an optional link for the author section.
+        - **Syntax:** `{author: name && icon && url}`
+        - **Example:** `{author: {user.name} && {user.avatar}}`
+    </Accordion>
+
+    <Accordion title="Fields">
+        Add organized rows of data. You can include `inline` at the end to place fields side-by-side.
+        - **Syntax:** `{field: name && value && inline}`
+        - **Example:** `{field: User ID && {user.id} && inline}`
+        
+        <Tip>You can also use the plural `{fields: ...}` node to define multiple fields at once: `{fields: name: F1 && value: V1 && name: F2 && value: V2}`</Tip>
+    </Accordion>
+
+    <Accordion title="Footer">
+        Configure the small text and icon at the very bottom.
+        - **Syntax:** `{footer: text && icon}`
+        - **Example:** `{footer: Sent by {user.name} && {guild.icon}}`
+    </Accordion>
+
+    <Accordion title="Buttons">
+        Add interactive buttons to your message.
+        - **Types:** `Blurple`, `Green`, `Grey`, `Red`, or a direct link.
+        - **Syntax:** `{button: label && style_or_url && emoji && disabled}`
+        - **Example:** `{button: Support Shell && https://discord.gg/greed && 🛠️}`
+    </Accordion>
+</AccordionGroup>
+
+## Mixing Text and Embeds
+
+By default, Greed attempts to identify if you are sending a raw text message or an embed script. If you want to ensure the bot parses your script correctly—especially when including variables—begin your message with `{embed}$v`.
+
+```javascript Template
+{embed}$v{title: Welcome!}$v{description: Glad you joined us, {user.mention}!}
+```
+
+## Tips & Tricks
+
+- **New Lines:** You can create real new lines in your `{description}` by simply pressing `Enter` within the script.
+- **Multiple Embeds:** Want to send more than one embed in a single message? Just start a new `{embed}` block!
+- **Zero-Width Spaces:** If you need an empty field or title, you can use a zero-width space character.

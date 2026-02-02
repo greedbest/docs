@@ -1,0 +1,58 @@
+---
+title: Pagination
+description: "Learn how to create multi-page interactive embeds."
+icon: arrows-turn-to-dots
+---
+
+## Overview
+
+Pagination allows you to condense large amounts of information into a single message with interactive "Next" and "Back" buttons. This is perfect for utility embeds, lists, or detailed server guides.
+
+<Warning>Pagination is only supported for messages sent by Greed that contain at least one embed.</Warning>
+
+## Setup Guide
+
+Follow these steps to turn a simple embed into a paginated interface.
+
+<Steps>
+  <Step title="Initialize the Embed">
+    Select a message sent by the bot and register it as the primary page.
+    ```javascript
+    ,pagination set [message_id_or_link]
+    ```
+    This defines the "Page 1" of your interaction.
+  </Step>
+  
+  <Step title="Add Additional Pages">
+    Use the `add` subcommand to push new content to the end of the sequence.
+    ```javascript
+    ,pagination add [message_link] [embed_script]
+    ```
+    You can add up to 10 pages per message.
+  </Step>
+
+  <Step title="Modify or Correct">
+    If you need to tweak the content of a specific page without resetting the whole system:
+    ```javascript
+    ,pagination update [message_link] [page_number] [new_script]
+    ```
+  </Step>
+
+  <Step title="Finalize and Navigate">
+    Greed will automatically add reaction arrows (⬅️ ➡️) to the message. Users with appropriate permissions can now flip through your pages!
+  </Step>
+</Steps>
+
+## Complete Command List
+
+| Command | Description |
+| :--- | :--- |
+| `,pagination list` | Lists all active paginated embeds in the current channel. |
+| `,pagination remove [link] [page]` | Removes a specific page from the sequence. |
+| `,pagination delete [link]` | Completely removes all pagination logic from a message. |
+| `,pagination reset` | Wipes all pagination configurations for the entire server. |
+| `,pagination restorereactions` | Re-adds the navigation arrows if they were accidentally removed. |
+
+<Info>
+  Pagination scripts support all standard [variables](/resources/scripting/variables) and [embed parameters](/resources/scripting/embeds)!
+</Info>

@@ -67,6 +67,20 @@
           "miscellaneous/lastfm",
           "miscellaneous/utility"
         ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          {
+            "group": "Scripting",
+            "pages": [
+              "resources/scripting/embeds",
+              "resources/scripting/variables",
+              "resources/scripting/pagination"
+            ]
+          },
+          "resources/permissions"
+        ]
       }
     ]
   },

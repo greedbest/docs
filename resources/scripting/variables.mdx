@@ -1,0 +1,106 @@
+---
+title: Variables
+description: "A complete reference of all dynamic placeholders available in Greed."
+icon: signature
+---
+
+Variables allow you to inject dynamic data into your messages and embeds. They are automatically replaced by the bot based on the current context.
+
+<Info>
+  All variables are case-sensitive. Most variables follow the `category.property` format.
+</Info>
+
+<Tabs>
+  <Tab title="User & Member">
+    | Variable | Output |
+    | :--- | :--- |
+    | `{user}` | Shortcut for the user's global username. |
+    | `{user.id}` | The user's unique Discord ID. |
+    | `{user.mention}` | Mentions the user (e.g., <@123...>). |
+    | `{user.name}` | The user's global username or nickname. |
+    | `{user.tag}` | The user's discriminator (e.g., 0001) or "0". |
+    | `{user.avatar}` | URL to the user's profile picture. |
+    | `{user.banner}` | URL to the user's profile banner. |
+    | `{user.bot}` | Returns "Yes" or "No". |
+    | `{user.created_at}` | Relative account age (e.g., "3 days ago"). |
+    | `{user.created_at_timestamp}` | Raw UNIX timestamp of account creation. |
+    | `{user.created_at_iso}` | ISO 8601 creation date. |
+    | `{user.created_at_date}` | YYYY-MM-DD format. |
+    | `{user.joined_at}` | Relative join time (Member context). |
+    | `{user.joined_at_timestamp}` | Raw UNIX timestamp of join date. |
+    | `{user.role_count}` | Total roles held by the member. |
+    | `{user.roles}` | List of mentions for all roles held. |
+    | `{user.nick}` | Server-specific nickname. |
+  </Tab>
+
+  <Tab title="Server (Guild)">
+    | Variable | Output |
+    | :--- | :--- |
+    | `{guild.id}` | The server's unique ID. |
+    | `{guild.name}` | The name of the server. |
+    | `{guild.mention}` | Text name of the server. |
+    | `{guild.count}` | Total member count. |
+    | `{guild.icon}` | URL to the server's icon. |
+    | `{guild.owner}` | Mentions the server owner. |
+    | `{guild.owner_id}` | Discord ID of the owner. |
+    | `{guild.boost_count}` | Total number of server boosts. |
+    | `{guild.boost_tier}` | Current boost level (0-3). |
+    | `{guild.created_at}` | Relative age of the server. |
+    | `{guild.created_at_date}` | YYYY-MM-DD creation date. |
+  </Tab>
+
+  <Tab title="Channel">
+    | Variable | Output |
+    | :--- | :--- |
+    | `{channel.id}` | The current channel's ID. |
+    | `{channel.mention}` | Mentions the channel (e.g., #general). |
+    | `{channel.name}` | The name of the channel. |
+    | `{channel.topic}` | The channel's topic/description. |
+    | `{channel.category_id}` | ID of the parent category. |
+    | `{channel.is_thread}` | Returns "Yes" or "No". |
+    | `{channel.created_at}` | Relative creation time. |
+  </Tab>
+
+  <Tab title="Last.fm">
+    <Tip>These are specifically available for Last.fm commands and custom FM embeds.</Tip>
+
+    | Variable | Output |
+    | :--- | :--- |
+    | `{track.name}` | Title of the current track. |
+    | `{track.url}` | Last.fm link to the track. |
+    | `{track.duration}` | Length of the track (MM:SS). |
+    | `{track.plays}` | Your total scrobbles for this track. |
+    | `{track.hyperlink_bold}` | Bold, clickable Markdown link for the track. |
+    | `{artist.name}` | Name of the artist. |
+    | `{artist.plays}` | Your total scrobbles for this artist. |
+    | `{artist.image}` | URL to the artist's image. |
+    | `{album.name}` | Title of the album. |
+    | `{album.cover}` | URL to the album artwork. |
+    | `{user.plays}` | Your total Last.fm scrobbles. |
+    | `{scrobbles}` | Shortcut for total scrobbles. |
+  </Tab>
+
+  <Tab title="Advanced & Contextual">
+    | Context | Variable | Output |
+    | :--- | :--- | :--- |
+    | **Moderation** | `{reason.value}` | The reason provided for the action. |
+    | **Moderation** | `{time.value}` | The duration of the punishment. |
+    | **Levels** | `{level}` | The user's new level. |
+    | **Tickets** | `{ticket.number}` | Numeric ID of the ticket. |
+    | **Tickets** | `{ticket.topic}` | Selected topic for the ticket. |
+    | **Messages** | `{message.content}` | Content of the triggered message. |
+    | **Messages** | `{message.url}` | Direct link to the message. |
+    | **System** | `{timestamp}` | Discord localized full date/time. |
+  </Tab>
+</Tabs>
+
+## Functional Variables
+
+### Lowercase
+Convert any variable output to all lowercase letters.
+- **Syntax:** `{lower(variable.name)}`
+- **Example:** `{lower(guild.name)}` -> `greed support`
+
+### Target User
+In moderation or interaction contexts, use `target_user` to refer to the person being acted upon.
+- `{target_user.name}`, `{target_user.mention}`, `{target_user.id}`

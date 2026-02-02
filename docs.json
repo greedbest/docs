@@ -10,14 +10,9 @@
   "navigation": {
     "groups": [
       {
-        "group": "Getting Started",
+        "group": "Overview",
         "pages": [
-          "getting-started"
-        ]
-      },
-      {
-        "group": "Customization",
-        "pages": [
+          "getting-started",
           "customization"
         ]
       },
@@ -35,6 +30,7 @@
         "pages": [
           {
             "group": "Roles",
+            "icon": "user-shield",
             "pages": [
               "configuration/roles/booster",
               "configuration/roles/reaction",
@@ -43,6 +39,7 @@
           },
           {
             "group": "Messages",
+            "icon": "messages",
             "pages": [
               "configuration/messages/system",
               "configuration/messages/responder",
@@ -51,7 +48,7 @@
           },
           "configuration/starboard",
           "configuration/voicemaster",
-          "configuration/level",
+          "configuration/levels",
           "configuration/bump-reminder",
           "configuration/reaction-triggers",
           "configuration/command-aliases",

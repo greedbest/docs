@@ -108,10 +108,24 @@ Commands for server staff to manage the booster role system globally.
     ```
   </Accordion>
   <Accordion title="Global Status">
-    Check how many booster roles exist and who owns them.
-    ```javascript
-    ,br list
-    ```
+    - `,br list`: Check how many booster roles exist and who owns them.
+  </Accordion>
+</AccordionGroup>
+
+### Advanced Settings
+
+Fine-tune the system behavior with these administrative subcommands.
+
+<AccordionGroup>
+  <Accordion title="Hierarchy Anchor">
+    Set a "base" role that all booster roles will be positioned below in the hierarchy.
+    - `,settings baserole @Role`
+  </Accordion>
+  <Accordion title="Booster Awards">
+    Automatically grant specific roles to users when they start boosting and remove them when they stop.
+    - Add award: `,settings award add @Role`
+    - View awards: `,settings award list`
+    - Remove award: `,settings award remove @Role`
   </Accordion>
 </AccordionGroup>
 

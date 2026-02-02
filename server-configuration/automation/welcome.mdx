@@ -1,0 +1,36 @@
+---
+title: "Welcome"
+description: "Set up customizable greeting messages for your server"
+icon: "hand-wave"
+---
+
+## Overview
+
+Set a customizable welcome message that automatically sends once a user joins the server.
+
+## Setting up
+
+Firstly, make sure you've turned on the welcome system by using the `,welcome setup` command. You can always delete the welcome message by using `,welcome reset`
+
+## Configuring the welcome channel.
+
+Set the welcome channel to where you want the message to be sent when a member joins the server.
+
+<CodeGroup>
+
+```javascript Syntax
+,welcome channel (channel)
+```
+
+
+```javascript Example
+,welcome channel #welcome
+```
+
+</CodeGroup>
+
+## Creating the welcome message
+
+<Tip>
+  You can use [embeds](/resources/scripting/embeds) with dynamic [variables](/resources/scripting/variables) in your message
+</Tip>

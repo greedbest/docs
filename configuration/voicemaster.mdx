@@ -1,0 +1,68 @@
+---
+title: "VoiceMaster"
+description: "Dynamic, temporary voice channels that users can fully customize."
+icon: "microphone"
+---
+
+## Overview
+
+VoiceMaster allows members to create their own temporary voice channels by simply joining a designated "Join to Create" channel. Once created, the owner can manage their channel's name, limit, and visibility through commands or an interactive interface.
+
+## Getting Started
+
+Set up the VoiceMaster system in your server with a single command.
+
+<CodeGroup>
+```javascript Syntax
+,voicemaster setup
+```
+</CodeGroup>
+
+### What happens after setup?
+greed will create a new category containing:
+1. **Join to Create**: The trigger channel.
+2. **#interface**: A channel containing an interactive embed with buttons for easy control.
+
+<Tip>
+  You can rename or move these channels at any time; greed will keep tracking them.
+</Tip>
+
+## Customizing Your Channel
+
+When you are the owner of a temporary voice channel, you can use these commands (or the #interface buttons) to manage it.
+
+<AccordionGroup>
+  <Accordion title="Renaming">
+    Change your channel's name.
+    ```javascript
+    ,voicemaster rename ethan's vc
+    ```
+  </Accordion>
+  <Accordion title="User limit">
+    Set a cap on the number of members.
+    ```javascript
+    ,voicemaster limit 5
+    ```
+  </Accordion>
+  <Accordion title="Privacy & Visibility">
+    - `,voicemaster lock`: Prevents new users from joining.
+    - `,voicemaster ghost`: Hides the channel from the list.
+    - `,voicemaster permit @user`: Allows someone to join your locked/ghosted channel.
+  </Accordion>
+  <Accordion title="Ownership">
+    - `,voicemaster claim`: Take ownership if the previous owner leaves.
+    - `,voicemaster transfer @user`: Give ownership to another member.
+  </Accordion>
+</AccordionGroup>
+
+## Server-wide Configuration
+
+Administrators can set default settings for all new voice channels.
+
+- `,voicemaster default name {user}'s vc`: Change the default naming pattern.
+- `,voicemaster default bitrate 96`: Set the default audio quality.
+- `,voicemaster category Voice Channels`: Redirect new channels to a specific category.
+
+<Info>
+  Use `,voicemaster join role @Role` to automatically give a role to users when they join a voice channel. This is perfect for hiding the #interface channel unless a user is in a VC.
+</Info>

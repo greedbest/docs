@@ -1,0 +1,61 @@
+---
+title: "Logging"
+description: "Keep track of everything happening in your server with detailed activity logs."
+icon: "list-ul"
+---
+
+## Overview
+
+greed's logging system allows you to monitor server activity across various categories. You can direct different types of logs to specific channels, ensuring your staff stays informed without cluttering your main channels.
+
+## Setting up Logs
+
+To start logging, you need to add a channel to a specific log category.
+
+<CodeGroup>
+```javascript Syntax
+,logs add (category) (channel)
+```
+
+```javascript Example
+,logs add messages #message-logs
+,logs add moderation #mod-logs
+```
+</CodeGroup>
+
+## Log Categories
+
+greed can track a wide range of activities. You can assign different categories to different channels to keep things organized.
+
+| Category | Description |
+| :--- | :--- |
+| `messages` | Message edits and deletions. |
+| `members` | Users joining, leaving, and profile updates (nickname, roles). |
+| `moderation` | Bans, kicks, mutes, and other staff actions. |
+| `server` | Channel creation/deletion, role updates, and server setting changes. |
+| `voice` | Users joining, leaving, or switching voice channels. |
+| `channels` | Detailed logs for channel creation, deletion, and permission updates. |
+| `roles` | Detailed logs for role creation, deletion, and permission updates. |
+| `invites` | Tracking when invites are created, deleted, or used. |
+| `emojis` | Logs for emoji creation, deletion, and name changes. |
+| `stickers` | Logs for sticker creation, deletion, and name changes. |
+| `integrations` | Tracking changes to server integrations and webhooks. |
+| `integrations` | Tracking changes to server integrations and webhooks. |
+
+## Management Commands
+
+### Viewing configurations
+Check which categories are being logged and where.
+```javascript
+,logs view
+```
+
+### Removing a log
+Stop logging a specific category or remove a channel from the system.
+```javascript
+,logs remove (category) [channel]
+```
+
+<Tip>
+  You can log multiple categories to the same channel! Simply run `,logs add` for each category you want to track there.
+</Tip>

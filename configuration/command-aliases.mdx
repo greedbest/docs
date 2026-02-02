@@ -1,0 +1,52 @@
+---
+title: "Command Aliases"
+description: "Create your own custom commands that trigger greed's built-in features."
+icon: "signature"
+---
+
+## Overview
+
+Command aliases allow you to create custom "shortcuts" for greed's existing commands. This is useful for making commands easier to remember or for translating them into your own language.
+
+## Creating an Alias
+
+Map a new command name to an existing greed command.
+
+<CodeGroup>
+```javascript Syntax
+,alias add (new_command) (original_command)
+```
+
+```javascript Example
+,alias add kickout kick
+,alias add vanish purge
+```
+</CodeGroup>
+
+<Tip>
+  Once added, you can use `,kickout @user` just like you would use `,kick @user`.
+</Tip>
+
+## Management Commands
+
+### Viewing Aliases
+See all custom aliases currently configured in your server.
+```javascript
+,alias list
+```
+
+### Removing an Alias
+Delete a specific alias.
+```javascript
+,alias remove (alias_name)
+```
+
+### Resetting Everything
+Remove all custom aliases and return to greed's defaults.
+```javascript
+,alias removeall
+```
+
+<Warning>
+  You cannot override greed's built-in commands with aliases. If a command already exists, you won't be able to use its name for an alias.
+</Warning>

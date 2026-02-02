@@ -1,0 +1,61 @@
+---
+title: "Button Roles"
+description: "Modern, component-based role assignment using buttons."
+icon: "square-check"
+---
+
+## Overview
+
+Button roles provide a clean and interactive way for users to assign themselves roles. Unlike reactions, buttons don't clutter the bottom of a message and offer different styles and labels.
+
+## Adding Button Roles
+
+When adding a button role, you can customize the style, emoji, and label of the button.
+
+<CodeGroup>
+```javascript Syntax
+,buttonrole add (message_link) (role) [style] [emoji] [label]
+```
+
+```javascript Example
+,buttonrole add https://discord.com/channels/... @Announcements blurple :bell: Pings
+```
+</CodeGroup>
+
+### Button Styles
+You can use the following styles for your buttons:
+- `blurple` (Primary)
+- `grey` or `gray` (Secondary)
+- `green` (Success)
+- `red` (Danger)
+
+## Management Commands
+
+<AccordionGroup>
+  <Accordion title="Listing configurations">
+    View all active button roles in the server.
+    ```javascript
+    ,buttonrole list
+    ```
+  </Accordion>
+  <Accordion title="Removing a button">
+    Remove a specific role button from a message.
+    ```javascript
+    ,buttonrole remove (message_link) (role)
+    ```
+  </Accordion>
+  <Accordion title="Resetting a message">
+    Remove all button roles from a specific message.
+    ```javascript
+    ,buttonrole reset (message_link)
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  You can add up to **25 buttons** to a single message.
+</Info>
+
+<Tip>
+  If you don't specify a label, greed will use the name of the role by default.
+</Tip>

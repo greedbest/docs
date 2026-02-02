@@ -1,0 +1,83 @@
+---
+title: "Booster Roles"
+description: "Give your boosters the ability to create and manage their own personalized roles."
+icon: "gem"
+---
+
+## Getting Started
+
+Personalized booster roles allow your server's boosters to create a custom role with their own name, color, and icon. This feature is a great way to reward your most loyal community members.
+
+### Requirements
+- **Boost Tier 2**: Your server must be at least Boost Tier 2 for this feature to be available.
+- **Boosting**: The user must be actively boosting the server (or be the server owner).
+
+<Steps>
+  <Step title="Enable the system">
+    Run the `boosterrole setup` command to enable the system in your server.
+    ```javascript
+    ,boosterrole setup
+    ```
+  </Step>
+  <Step title="Set a base role (Optional)">
+    Use the `boosterrole base` command to set a role that booster roles will be positioned under. This ensures boosters don't accidentally get permissions higher than intended.
+    ```javascript
+    ,boosterrole base @Member
+    ```
+  </Step>
+</Steps>
+
+## Managing your role
+
+Once enabled, boosters can use the following commands to manage their custom role.
+
+### Creating a role
+Create your personalized role with a name and optional hex colors. greed supports up to 3 colors for gradient roles on servers with enhanced color support.
+
+<CodeGroup>
+```javascript Syntax
+,boosterrole create (name) [color1] [color2] [color3]
+```
+
+```javascript Example
+,boosterrole create greed-fan #BCBCE3
+,boosterrole create "Super Booster" #ff0000 #00ff00 #0000ff
+```
+</CodeGroup>
+
+### Customizing appearance
+You can update your role's color, name, and icon at any time.
+
+<AccordionGroup>
+  <Accordion title="Changing the color">
+    Update your role color with one or more hex codes.
+    ```javascript
+    ,boosterrole color #DEDEFF
+    ```
+  </Accordion>
+  <Accordion title="Renaming the role">
+    Change the name of your personalized role.
+    ```javascript
+    ,boosterrole rename New Name
+    ```
+  </Accordion>
+  <Accordion title="Setting an icon">
+    Set a custom icon for your role using an emoji or a direct image URL.
+    ```javascript
+    ,boosterrole icon :greed:
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Admin Commands
+
+Administrators can manage the booster role system using these subcommands:
+
+- `,boosterrole list`: View all personalized roles in the server.
+- `,boosterrole sync`: Manually sync role permissions if needed.
+- `,boosterrole delete [user]`: Delete your own booster role or a specific user's booster role.
+- `,boosterrole disable`: Turn off the booster role system entirely.
+
+<Tip>
+  Use `,boosterrole filter` to manage a list of prohibited words for booster role names.
+</Tip>

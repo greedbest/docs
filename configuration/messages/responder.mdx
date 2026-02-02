@@ -1,0 +1,60 @@
+---
+title: "Auto Responder"
+description: "Set up automated responses for specific keywords or phrases."
+icon: "reply-all"
+---
+
+## Overview
+
+Auto responders allow greed to automatically reply to messages that contain specific keywords. This is perfect for FAQs, community memes, or helpful reminders.
+
+## Creating an Auto Responder
+
+To create a new responder, you'll need the trigger keyword and the response (text or embed).
+
+<CodeGroup>
+```javascript Syntax
+,autoresponder add (trigger) (response)
+```
+
+```javascript Example
+,autoresponder add !help Please check our #rules for more info!
+```
+</CodeGroup>
+
+### Advanced Triggers
+- **Quotes**: If your trigger contains spaces, wrap it in "quotes".
+- **Variables**: You can use [dynamic variables](/resources/scripting/variables) in your responses.
+
+## Management Commands
+
+<AccordionGroup>
+  <Accordion title="Listing responders">
+    See all active auto responders in your server.
+    ```javascript
+    ,autoresponder list
+    ```
+  </Accordion>
+  <Accordion title="Removing a responder">
+    Delete a specific responder by its trigger.
+    ```javascript
+    ,autoresponder remove (trigger)
+    ```
+  </Accordion>
+  <Accordion title="Restricting to channels">
+    Limit auto responders to specific channels or ignore others.
+    ```javascript
+    ,autoresponder channels add #general
+    ```
+  </Accordion>
+  <Accordion title="Restricting by roles">
+    Only allow certain roles to trigger responders.
+    ```javascript
+    ,autoresponder roles add @Member
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Auto responders support greed's full [scripting system](/resources/scripting), allowing for complex embeds and logic.
+</Tip>

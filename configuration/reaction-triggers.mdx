@@ -1,0 +1,61 @@
+---
+title: "Reaction Triggers"
+description: "Automatically add reactions to messages containing specific keywords."
+icon: "face-smile"
+---
+
+## Overview
+
+Reaction triggers (also known as `autoreact`) allow greed to automatically add emojis to messages that match your defined keywords. This is great for highlighting certain topics or adding personality to your channels.
+
+## Adding a Trigger
+
+Specify the keyword you want to watch for and the emoji greed should react with.
+
+<CodeGroup>
+```javascript Syntax
+,autoreact add (keyword) (emoji)
+```
+
+```javascript Example
+,autoreact add greed 💸
+,autoreact add "good morning" 🌅
+```
+</CodeGroup>
+
+<Info>
+  Keywords with multiple words should be wrapped in "quotes".
+</Info>
+
+## Management Commands
+
+<AccordionGroup>
+  <Accordion title="Listing triggers">
+    View all active reaction triggers in your server.
+    ```javascript
+    ,autoreact list
+    ```
+  </Accordion>
+  <Accordion title="Removing a trigger">
+    Delete a specific trigger by keyword.
+    ```javascript
+    ,autoreact remove (keyword)
+    ```
+  </Accordion>
+  <Accordion title="Restricting to channels">
+    Limit auto-reactions to certain channels.
+    ```javascript
+    ,autoreact channels add #general
+    ```
+  </Accordion>
+  <Accordion title="Restricting by roles">
+    Only react to messages from specific roles.
+    ```javascript
+    ,autoreact roles add @Member
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  You can also use `,autoreact clear` to remove every trigger from the server at once.
+</Tip>

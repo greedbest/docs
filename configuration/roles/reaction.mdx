@@ -1,0 +1,51 @@
+---
+title: "Reaction Roles"
+description: "Allow members to self-assign roles by reacting to messages."
+icon: "fingerprint"
+---
+
+## Overview
+
+Reaction roles are an easy way for users to pick up roles for notifications, colors, or access to different parts of your server.
+
+## Setting up Reaction Roles
+
+To set up a reaction role, you'll need the link to the message you want people to react to, the emoji they should react with, and the role they will receive.
+
+<CodeGroup>
+```javascript Syntax
+,reactionrole add (message_link) (emoji) (role)
+```
+
+```javascript Example
+,reactionrole add https://discord.com/channels/... :verified: @Member
+```
+</CodeGroup>
+
+<Info>
+  The message link can be obtained by right-clicking a message and selecting **Copy Message Link**.
+</Info>
+
+## Managing Reaction Roles
+
+### Viewing existing roles
+Use the list command to see all reaction roles currently active in your server.
+```javascript
+,reactionrole list
+```
+
+### Removing a reaction role
+If you no longer want a specific reaction role, you can remove it using the same message link and emoji.
+```javascript
+,reactionrole remove (message_link) (emoji)
+```
+
+### Clearing all roles
+To remove every reaction role from a message or the entire server, use the clear command.
+```javascript
+,reactionrole clear [message_link]
+```
+
+<Tip>
+  greed will automatically attempt to add the reaction to the message when you create the reaction role. Make sure the bot has permission to react in that channel!
+</Tip>

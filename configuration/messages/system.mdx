@@ -1,0 +1,51 @@
+---
+title: "System Messages"
+description: "Configure Discord's built-in system messages for joins and boosts."
+icon: "gears"
+---
+
+## Overview
+
+greed allows you to manage Discord's default system messages, such as member join notifications and premium subscription (boost) announcements. You can set a specific channel for these messages and toggle them on or off.
+
+## Configuring the System Channel
+
+You can set the channel where Discord will send its native system messages.
+
+<CodeGroup>
+```javascript Syntax
+,set system [channel]
+```
+
+```javascript Example
+,set system #arrivals
+```
+</CodeGroup>
+
+<Tip>
+  Run the command without a channel to disable the system channel entirely.
+</Tip>
+
+## Toggling Notifications
+
+You can choose which native Discord notifications are sent to the system channel.
+
+### Join Notifications
+Toggle the default "A new member has joined" messages.
+```javascript
+,set system welcome
+```
+
+### Boost Notifications
+Toggle the default "Member has boosted the server" messages.
+```javascript
+,set system boost
+```
+
+<Info>
+  These commands act as a toggle. Running them once will flip the current state (enabled/disabled).
+</Info>
+
+<Warning>
+  These are Discord's **built-in** messages. For custom, fully configurable greed welcome/boost messages with embeds and images, please refer to the **Automation** guides.
+</Warning>

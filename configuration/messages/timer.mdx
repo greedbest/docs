@@ -1,0 +1,51 @@
+---
+title: "Timers"
+description: "Schedule automated, recurring messages in specific channels."
+icon: "clock"
+---
+
+## Overview
+
+Timers allow you to send messages on a regular schedule. These are useful for daily reminders, rotation advertisements, or community check-ins.
+
+## Setting up a Timer
+
+When adding a timer, you specify the channel, the interval (duration), and the message content.
+
+<CodeGroup>
+```javascript Syntax
+,timer add (channel) (interval) (message)
+```
+
+```javascript Example
+,timer add #general 12h Time for our daily server vote!
+,timer add #news 2d Check out our updated roadmap!
+```
+</CodeGroup>
+
+### Intervals
+Supported interval formats include:
+- `m` (minutes): `30m`
+- `h` (hours): `2h`, `12h`
+- `d` (days): `1d`, `7d`
+
+## Management Commands
+
+<AccordionGroup>
+  <Accordion title="Listing timers">
+    View all active timers and their next scheduled run time.
+    ```javascript
+    ,timer list
+    ```
+  </Accordion>
+  <Accordion title="Removing a timer">
+    Delete a timer. You will be prompted to select which one to remove if multiple exist.
+    ```javascript
+    ,timer remove [index]
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  Timers support greed's [embed scripting](/resources/scripting), so you can send beautiful scheduled announcements.
+</Info>

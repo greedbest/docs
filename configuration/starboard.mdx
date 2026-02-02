@@ -1,0 +1,84 @@
+---
+title: "Starboard"
+description: "Highlight interesting messages in your server based on reactions."
+icon: "star"
+---
+
+## Overview
+
+The starboard is a community-driven highlighting system. When a message receives enough reactions (stars, clowns, etc.), greed will repost it to a designated channel. This is perfect for preserving funny moments or important announcements.
+
+## Getting Started
+
+To create a starboard, you need to specify the channel, the emoji to watch for, and the number of reactions required.
+
+<CodeGroup>
+```javascript Syntax
+,starboard add (channel) (emoji) (threshold)
+```
+
+```javascript Example
+,starboard add #starboard ⭐ 3
+,starboard add #clownboard 🤡 5
+```
+</CodeGroup>
+
+<Tip>
+  greed supports multiple starboards per server! You can have one for stars, one for clowns, and even one for custom emojis.
+</Tip>
+
+## Management Commands
+
+### Viewing configurations
+View all active starboards and their settings.
+```javascript
+,starboard list
+```
+
+### Removing a starboard
+Delete a starboard by specifying its emoji.
+```javascript
+,starboard remove (emoji)
+```
+
+### Ignoring content
+Prevent specific channels, roles, or users from appearing on the starboard.
+```javascript
+,starboard ignore #staff-chat
+,starboard unignore @Developer
+```
+
+## Customizing the Embed
+
+You can fine-tune how messages look when they are reposted to the starboard.
+
+<AccordionGroup>
+  <Accordion title="Embed color">
+    Change the color of the reposted embed.
+    ```javascript
+    ,starboard color #cf7c08
+    ```
+  </Accordion>
+  <Accordion title="Toggle timestamp">
+    Show or hide the message timestamp.
+    ```javascript
+    ,starboard timestamp off
+    ```
+  </Accordion>
+  <Accordion title="Toggle jump URL">
+    Include or exclude the direct link to the original message.
+    ```javascript
+    ,starboard jumpurl on
+    ```
+  </Accordion>
+  <Accordion title="Toggle attachments">
+    Choose whether to include images and files in the repost.
+    ```javascript
+    ,starboard attachments off
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  Use `,starboard move` to reorder priorities if you have multiple starboards watching for the same emoji.
+</Info>

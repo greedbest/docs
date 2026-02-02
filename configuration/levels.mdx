@@ -1,0 +1,102 @@
+---
+title: "Levels"
+description: "Reward activity with XP, ranks, and automatic role rewards."
+icon: "trophy"
+---
+
+## Overview
+
+greed features a robust, dual-track leveling system that rewards both text and voice activity. With real-time stats, dynamic rank cards, and automated role rewards, it's designed to keep your community engaged.
+
+## Getting Started
+
+Enable and configure the leveling system using the interactive setup menu.
+
+<CodeGroup>
+```javascript Syntax
+,levels setup
+```
+</CodeGroup>
+
+Through the setup menu, you can:
+- Toggle **Text** and **Voice** XP independently.
+- Set a custom **Award Channel** for level-up announcements.
+- Customize the **Award Message** with variables.
+- Manage **Level Roles** directly through menus.
+
+---
+
+## Earning XP
+
+Members earn XP passively by participating in the server.
+
+### Text XP
+- Earned by sending messages in text channels.
+- Includes anti-spam protection to ensure fair leveling.
+- **Commands**: `,levels live text` creates a self-updating leaderboard in the current channel.
+
+### Voice XP
+- Earned by staying in voice channels.
+- Requires members to be unmuted and not alone in a channel to prevent farming.
+- **Commands**: `,levels live voice` creates a self-updating leaderboard for voice activity.
+
+---
+
+## Commands for Members
+
+These commands allow users to track their own progress and see how they compare to the rest of the community.
+
+<AccordionGroup>
+  <Accordion title="Viewing your rank">
+    See your current level, total XP, and progress to the next level with a custom rank card.
+    ```javascript
+    ,level [@user]
+    ```
+    *Aliases: ,rank, ,xp, ,lvl*
+  </Accordion>
+  <Accordion title="Leaderboards">
+    View the top members in the server. You can sort by total, text, or voice XP.
+    ```javascript
+    ,levels leaderboard [total/text/voice]
+    ```
+    *Aliases: ,levels lb, ,levels top*
+  </Accordion>
+  <Accordion title="Role Rewards List">
+    See all the roles currently configured as rewards for reaching specific levels.
+    ```javascript
+    ,levels roles
+    ```
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Administrative Commands
+
+Manage the leveling system and adjust user progress when necessary.
+
+### XP Multipliers (Boosts)
+Reward specific roles or channels with extra XP.
+```javascript
+,levels boost add (role/channel) (multiplier)
+```
+
+### Manual Adjustments
+Give or take XP from specific members.
+```javascript
+,levels award (user) (amount)
+```
+
+### Resetting Progress
+Wipe leveling data for a specific user or the entire server.
+<Warning>
+  Resetting "all" is permanent and cannot be undone.
+</Warning>
+- `,levels reset user @user`: Reset a single member's XP.
+- `,levels reset all`: Wipe all leveling data for the server.
+
+### Ignoring Channels
+Prevent XP gain in specific channels (e.g., bot-commands or staff channels).
+```javascript
+,levels ignore #channel
+```

@@ -11,11 +11,15 @@
     "groups": [
       {
         "group": "Getting Started",
-        "pages": ["getting-started"]
+        "pages": [
+          "getting-started"
+        ]
       },
       {
         "group": "Customization",
-        "pages": ["customization"]
+        "pages": [
+          "customization"
+        ]
       },
       {
         "group": "Security",
@@ -24,6 +28,34 @@
           "moderation/antiraid",
           "moderation/moderation",
           "moderation/fakepermissions"
+        ]
+      },
+      {
+        "group": "Server Configuration",
+        "pages": [
+          {
+            "group": "Roles",
+            "pages": [
+              "configuration/roles/booster",
+              "configuration/roles/reaction",
+              "configuration/roles/button"
+            ]
+          },
+          {
+            "group": "Messages",
+            "pages": [
+              "configuration/messages/system",
+              "configuration/messages/responder",
+              "configuration/messages/timer"
+            ]
+          },
+          "configuration/starboard",
+          "configuration/voicemaster",
+          "configuration/level",
+          "configuration/bump-reminder",
+          "configuration/reaction-triggers",
+          "configuration/command-aliases",
+          "configuration/logging"
         ]
       }
     ]

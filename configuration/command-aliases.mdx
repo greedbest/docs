@@ -13,14 +13,16 @@ Command aliases allow you to create custom "shortcuts" for greed's existing comm
 Map a new command name to an existing greed command.
 
 <CodeGroup>
+
 ```javascript Syntax
 ,alias add (new_command) (original_command)
 ```
 
+
 ```javascript Example
 ,alias add kickout kick
-,alias add vanish purge
 ```
+
 </CodeGroup>
 
 <Tip>
@@ -30,19 +32,25 @@ Map a new command name to an existing greed command.
 ## Management Commands
 
 ### Viewing Aliases
+
 See all custom aliases currently configured in your server.
+
 ```javascript
 ,alias list
 ```
 
 ### Removing an Alias
+
 Delete a specific alias.
+
 ```javascript
 ,alias remove (alias_name)
 ```
 
 ### Resetting Everything
+
 Remove all custom aliases and return to greed's defaults.
+
 ```javascript
 ,alias removeall
 ```

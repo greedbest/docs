@@ -13,14 +13,17 @@ Reaction triggers (also known as `autoreact`) allow greed to automatically add e
 Add a new trigger by specifying the keyword and the emoji(s) you want greed to add.
 
 <CodeGroup>
+
 ```javascript Syntax
 ,autoreact add (keyword) (emoji)
 ```
 
+
 ```javascript Example
 ,autoreact add "good morning" ☕ ☀️
-,autoreact add greed 👍
+,autoreact add greed 🔥
 ```
+
 </CodeGroup>
 
 <Info>
@@ -32,6 +35,7 @@ Add a new trigger by specifying the keyword and the emoji(s) you want greed to a
 ## Behavior & Logic
 
 ### Word Matching
+
 <AccordionGroup>
   <Accordion title="Partial Matching">
     By default, greed will react if the keyword is found **anywhere** within the message content.
@@ -42,10 +46,13 @@ Add a new trigger by specifying the keyword and the emoji(s) you want greed to a
 </AccordionGroup>
 
 ### Restrictions
+
 Whitelisting allows you to control where and for whom triggers are active.
+
 <AccordionGroup>
   <Accordion title="Channel Whitelisting">
     Limit autoreacts to specific channels. If no channels are added, they work globally.
+
     ```javascript
     ,autoreact channels add #channel
     ,autoreact channels remove #channel
@@ -54,6 +61,7 @@ Whitelisting allows you to control where and for whom triggers are active.
   </Accordion>
   <Accordion title="Role Whitelisting">
     Only react to messages from members with specific roles.
+
     ```javascript
     ,autoreact roles add @Role
     ,autoreact roles remove @Role
@@ -67,10 +75,12 @@ Whitelisting allows you to control where and for whom triggers are active.
 ## Limits & Management
 
 ### Server Limits
+
 - **Free**: Up to 50 reaction triggers per server.
 - **Premium**: Up to 500 reaction triggers per server.
 
 ### Management Commands
+
 <AccordionGroup>
   <Accordion title="Organization">
     - `,autoreact list`: See all active triggers and their linked emojis.

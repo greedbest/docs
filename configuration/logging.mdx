@@ -20,8 +20,7 @@ To start logging, you need to add a channel to a specific log category.
 
 
 ```javascript Example
-,logs add messages #message-logs
-,logs add moderation #mod-logs
+,logs add #message-logs messages
 ```
 
 </CodeGroup>
@@ -59,9 +58,18 @@ Check which categories are being logged and where.
 
 Stop logging a specific category or remove a channel from the system.
 
-```javascript
+<CodeGroup>
+
+```javascript Syntax
 ,logs remove [channel] [module]
 ```
+
+
+```javascript Example
+,logs remove #message-logs message
+```
+
+</CodeGroup>
 
 Don't input a channel or module to remove all logging events.
 
@@ -71,7 +79,7 @@ Don't input a channel or module to remove all logging events.
 
 ## Moderation Logs
 
-For specific moderation actions (bans, kicks, mutes), you can use a dedicated setting to define the log channel. By default, this is the `#logs` channel that is created when you run `,setup` 
+For specific moderation actions (bans, kicks, mutes), you can use a dedicated setting to define the log channel. By default, this is the `#logs` channel that is created when you run `,setup`
 
 ```javascript
 ,settings modlog #channel

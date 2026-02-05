@@ -12,13 +12,12 @@ VoiceMaster allows members to create their own temporary voice channels by simpl
 
 Set up VoiceMaster by creating the interface and the primary "Join to Create" channel.
 
-<CodeGroup>
-```javascript Syntax
+```javascript
 ,voicemaster setup
 ```
-</CodeGroup>
 
 Through the setup process, you will:
+
 1. Create a category for temporary channels.
 2. Link a "Join to Create" channel.
 3. Post an interactive interface for easy management.
@@ -30,6 +29,7 @@ Through the setup process, you will:
 Every temporary channel owner can manage their VC using the buttons posted during setup or via commands.
 
 ### Interaction Buttons
+
 Owners can interact with the VoiceMaster message to trigger these actions:
 
 <AccordionGroup>
@@ -57,28 +57,37 @@ Administrators can customize the system-wide behavior of VoiceMaster using these
 <AccordionGroup>
   <Accordion title="Naming Templates (Premium)">
     Set a default naming pattern for all new channels.
+
     ```javascript
     ,voicemaster template {owner}'s channel
     ```
-    <Tip>Use `{owner}` to automatically insert the member's username.</Tip>
+
+    <Tip>
+      Use `{owner}` to automatically insert the member's username.
+    </Tip>
     - Reset template: `,voicemaster template reset`
   </Accordion>
   <Accordion title="Default Permissions">
     Set a specific role as the "default" visitor role for all new channels.
+
     ```javascript
     ,voicemaster default @Role
     ```
+
     - Reset default role: `,voicemaster default` (run without arguments)
   </Accordion>
   <Accordion title="Access Control">
     Grant or revoke permissions for specific users.
+
     - `,voicemaster permit @user`: Allow a user to join a locked channel.
     - `,voicemaster reject @user`: Kick and ban a user from the channel.
   </Accordion>
   <Accordion title="Voice Roles">
     Automatically assign a specific role to any member who joins a voice channel.
-    - `,settings vcrole @Role`
-    <Tip>The role is automatically removed when the user leaves the voice channel.</Tip>
+
+    - `,settings vcrole @Role` <Tip>
+        The role is automatically removed when the user leaves the voice channel.
+      </Tip>
   </Accordion>
 </AccordionGroup>
 

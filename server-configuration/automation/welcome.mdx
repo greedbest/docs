@@ -1,0 +1,67 @@
+---
+title: "Welcome"
+description: "Set up customizable greeting messages for your server"
+icon: "door-open"
+---
+
+## Overview
+
+Set a customizable welcome message that automatically sends once a user joins the server.
+
+## Setting up
+
+Firstly, make sure you've turned on the welcome system by using the `,welcome setup` command. You can always delete the welcome message by using `,welcome reset`
+
+## Configuring the welcome channel.
+
+Set the welcome channel to where you want the message to be sent when a member joins the server.
+
+<CodeGroup>
+
+```javascript Syntax
+,welcome channel (channel)
+```
+
+
+```javascript Example
+,welcome channel #welcome
+```
+
+</CodeGroup>
+
+## Creating the welcome message
+
+Set the message that will be sent when a member joins the server.
+
+<Tip>
+  You can use [embeds](/resources/scripting/embeds) with dynamic [variables](/resources/scripting/variables) in your message
+</Tip>
+
+<CodeGroup>
+
+```javascript Syntax
+,welcome message (message)
+```
+
+
+```javascript Example
+,welcome message {embed}{title: Welcome!}{description: Welcome {{user}}!}
+```
+
+</CodeGroup>
+
+## Testing and viewing the welcome message
+
+You can easily test or view your set welcome message using `,welcome test` and `welcome view`
+
+```javascript
+,welcome test
+```
+
+Shows the message that will be sent, using you as the user joining.
+
+```javascript
+,welcome view
+```
+
+Shows the raw code for the message, like your embed code.

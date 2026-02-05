@@ -33,6 +33,13 @@
         "group": "Server Configuration",
         "pages": [
           {
+            "group": "Automation",
+            "icon": "cog",
+            "pages": [
+              "server-configuration/automation/welcome"
+            ]
+          },
+          {
             "group": "Roles",
             "icon": "shield-user",
             "pages": [

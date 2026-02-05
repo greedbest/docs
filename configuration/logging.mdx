@@ -13,48 +13,65 @@ greed's logging system allows you to monitor server activity across various cate
 To start logging, you need to add a channel to a specific log category.
 
 <CodeGroup>
+
 ```javascript Syntax
-,logs add (category) (channel)
+,logs add (channel) (module)
 ```
+
 
 ```javascript Example
-,logs add messages #message-logs
-,logs add moderation #mod-logs
+,logs add #message-logs messages
 ```
+
 </CodeGroup>
 
-## Log Categories
+## Log Modules
 
-greed can track a wide range of activities. You can assign different categories to different channels to keep things organized.
+greed can track a wide range of activities. You can assign different modules to different channels to keep things organized.
 
-| Category | Description |
-| :--- | :--- |
-| `messages` | Message edits and deletions. |
-| `members` | Users joining, leaving, and profile updates (nickname, roles). |
-| `moderation` | Bans, kicks, mutes, and other staff actions. |
-| `server` | Channel creation/deletion, role updates, and server setting changes. |
-| `voice` | Users joining, leaving, or switching voice channels. |
-| `channels` | Detailed logs for channel creation, deletion, and permission updates. |
-| `roles` | Detailed logs for role creation, deletion, and permission updates. |
-| `invites` | Tracking when invites are created, deleted, or used. |
-| `emojis` | Logs for emoji creation, deletion, and name changes. |
-| `stickers` | Logs for sticker creation, deletion, and name changes. |
-| `integrations` | Tracking changes to server integrations and webhooks. |
-| `soundboard` | Logs for soundboard sounds being added, removed, or updated. |
+| Module         | Description                                                           |
+| :------------- | :-------------------------------------------------------------------- |
+| `messages`     | Message edits and deletions.                                          |
+| `members`      | Users joining, leaving, and profile updates (nickname, roles).        |
+| `moderation`   | Bans, kicks, mutes, and other staff actions.                          |
+| `server`       | Channel creation/deletion, role updates, and server setting changes.  |
+| `voice`        | Users joining, leaving, or switching voice channels.                  |
+| `channels`     | Detailed logs for channel creation, deletion, and permission updates. |
+| `roles`        | Detailed logs for role creation, deletion, and permission updates.    |
+| `invites`      | Tracking when invites are created, deleted, or used.                  |
+| `emojis`       | Logs for emoji creation, deletion, and name changes.                  |
+| `stickers`     | Logs for sticker creation, deletion, and name changes.                |
+| `integrations` | Tracking changes to server integrations and webhooks.                 |
+| `soundboard`   | Logs for soundboard sounds being added, removed, or updated.          |
 
 ## Management Commands
 
 ### Viewing configurations
+
 Check which categories are being logged and where.
+
 ```javascript
 ,logs view
 ```
 
 ### Removing a log
+
 Stop logging a specific category or remove a channel from the system.
-```javascript
-,logs remove (category) [channel]
+
+<CodeGroup>
+
+```javascript Syntax
+,logs remove [channel] [module]
 ```
+
+
+```javascript Example
+,logs remove #message-logs message
+```
+
+</CodeGroup>
+
+Don't input a channel or module to remove all logging events.
 
 <Tip>
   You can log multiple categories to the same channel! Simply run `,logs add` for each category you want to track there.
@@ -62,7 +79,7 @@ Stop logging a specific category or remove a channel from the system.
 
 ## Moderation Logs
 
-For specific moderation actions (bans, kicks, mutes), you can use a dedicated setting to define the log channel.
+For specific moderation actions (bans, kicks, mutes), you can use a dedicated setting to define the log channel. By default, this is the `#logs` channel that is created when you run `,setup`
 
 ```javascript
 ,settings modlog #channel

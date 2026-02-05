@@ -13,14 +13,17 @@ The starboard is a community-driven highlighting system. When a message receives
 Create a new starboard by specifying the emoji to track and the channel where highlighted messages should be posted.
 
 <CodeGroup>
+
 ```javascript Syntax
 ,starboard add (emoji) #channel
 ```
 
+
 ```javascript Example
 ,starboard add ⭐ #starboard
-,starboard add :clown: #clownboard
+,starboard add 🤡 #clownboard
 ```
+
 </CodeGroup>
 
 <Tip>
@@ -34,17 +37,19 @@ Create a new starboard by specifying the emoji to track and the channel where hi
 Customize how starboard messages look and which data they include.
 
 ### Appearance Settings
+
 <AccordionGroup>
   <Accordion title="Visuals">
     - `,starboard color (emoji) (hex)`: Set a custom embed color for specific starboards.
     - **Star Leveling**: For the default ⭐ emoji, the reaction emoji in the repost automatically upgrades as stars increase:
-        - 1-4 ⭐: `⭐`
-        - 5-9 ⭐: `🌟`
-        - 10-24 ⭐: `💫`
-        - 25+ ⭐: `✨`
+      - 1-4 ⭐: `⭐`
+      - 5-9 ⭐: `🌟`
+      - 10-24 ⭐: `💫`
+      - 25+ ⭐: `✨`
   </Accordion>
   <Accordion title="Message Toggles">
     Control what information is displayed in each starboard repost:
+
     - `,starboard jumpurl`: Toggle the "Jump to message" link.
     - `,starboard timestamp`: Toggle the creation timestamp display.
     - `,starboard attachments`: Toggle whether images/videos are included.
@@ -56,6 +61,7 @@ Customize how starboard messages look and which data they include.
 ## Management
 
 ### Advanced Commands
+
 <AccordionGroup>
   <Accordion title="Channel Management">
     - `,starboard move (emoji) #new-channel`: Change which channel a starboard posts to without resetting it.

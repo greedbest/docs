@@ -12,6 +12,7 @@ description: "A quick guide to setting up moderation for your server."
   </Step>
   <Step title="Verify created channels">
     greed will create a **greed-mod** category containing:
+
     - `#logs`: Where all moderation actions are recorded.
     - `#jail`: A restricted channel for jailed users.
 
@@ -21,10 +22,11 @@ description: "A quick guide to setting up moderation for your server."
   </Step>
   <Step title="Verify created roles">
     The following specialized roles will be created:
+
     - **imute**: Restricts the user from uploading images.
     - **rmute**: Restricts the user from adding reactions or using external emoji.
     - **jailed**: Restricts the user from all channels except the jail channel.
-    
+
     <Warning>
       Do **not** rename the `jailed` role, as this can break the jail functionality.
     </Warning>
@@ -39,19 +41,21 @@ The `invoke` system allows you to customize the messages greed sends when modera
 
 ### Supported Actions
 
-You can customize messages for:
-`ban`, `kick`, `timeout`, `softban`, `hardban`, `imute`, `rmute`, `untimeout`, `iunmute`, `runmute`
+You can customize messages for: `ban`, `kick`, `timeout`, `softban`, `hardban`, `imute`, `rmute`, `untimeout`, `iunmute`, `runmute`
 
 ### Configuration Commands
 
 <CodeGroup>
+
 ```javascript DM Message
 ,invoke (action) dm (message)
 ```
 
+
 ```javascript Channel Response
 ,invoke (action) message (message)
 ```
+
 </CodeGroup>
 
 ### Message Variables
@@ -88,13 +92,16 @@ You can use the following variables in your messages:
 You can quickly remove a user's dangerous permissions (like Administrator or Manage Server) using the strip command.
 
 <CodeGroup>
+
 ```javascript Command
 ,strip (user) [reason]
 ```
 
+
 ```javascript Example
 ,strip @fe3murs being abusive
 ```
+
 </CodeGroup>
 
 ---
@@ -122,31 +129,39 @@ If you prefer to configure moderation channels and roles manually instead of usi
 Fine-tune your server's safety with automated punishments and staff management.
 
 ### Staff Roles
+
 Define which roles are considered "Staff". Staff roles have bypasses for certain filters and are recognized by moderation logs.
+
 - Add staff: `,settings staff add @Role`
 - List staff: `,settings staff list`
 - Remove staff: `,settings staff remove @Role`
 
 ### Punishment System (Warnings)
+
 Set up automated actions that occur when a user reaches a certain number of warnings.
 
 <CodeGroup>
+
 ```javascript Syntax
 ,settings warn punishment add (threshold) (action) [duration]
 ```
+
 
 ```javascript Examples
 ,settings warn punishment add 3 timeout 1h
 ,settings warn punishment add 5 kick
 ,settings warn punishment add 10 ban
 ```
+
 </CodeGroup>
 
 **Available Actions:**
+
 - `timeout` (Requires duration, e.g., `10m`, `1h`, `1d`)
 - `kick`
 - `jail`
 - `hardban`
+- `softban`
 - `ban`
 
 <AccordionGroup>

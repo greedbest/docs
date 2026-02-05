@@ -12,11 +12,9 @@ greed's bump reminder helps your server stay at the top of DISBOARD by sending a
 
 Enable the reminder in the channel where the DISBOARD bot works.
 
-<CodeGroup>
-```javascript Syntax
+```javascript
 ,bumpreminder enable
 ```
-</CodeGroup>
 
 Once enabled, greed will watch for the DISBOARD bot's success message (`Bump done!`) and automatically start a 2-hour countdown.
 
@@ -25,15 +23,18 @@ Once enabled, greed will watch for the DISBOARD bot's success message (`Bump don
 ## Customization
 
 ### Reminder Scripts
+
 <AccordionGroup>
   <Accordion title="The Reminder Message">
     Customize what greed says when it's time to bump again.
+
     ```javascript
     ,bumpreminder reminder It's time to bump! Use **/bump** to help us grow.
     ```
   </Accordion>
   <Accordion title="The Thank You Message">
     Send a custom message immediately after someone successfully bumps. Supports full [Scripting](/resources/scripting/variables).
+
     ```javascript
     ,bumpreminder thankyou {embed}{description: Thanks {user}! You've bumped {bumps} times!}
     ```
@@ -49,11 +50,13 @@ Manage your community's bump contributions.
 <AccordionGroup>
   <Accordion title="Competition (Leaderboards)">
     See who has contributed the most bumps to the server.
+
     - `,bumpreminder leaderboard`: View the top pumpers.
-    - *Alias: ,br lb*
+    - _Alias: ,br lb_
   </Accordion>
   <Accordion title="Personal Stats">
     Track individual contributions.
+
     - `,bumpreminder view [@user]`: See total bumps for yourself or another member.
   </Accordion>
 </AccordionGroup>
@@ -61,6 +64,7 @@ Manage your community's bump contributions.
 ---
 
 ## Management Commands
+
 <AccordionGroup>
   <Accordion title="Control & Debug">
     - `,bumpreminder disable`: Turn off the bump reminder system entirely.

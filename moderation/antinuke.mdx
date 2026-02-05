@@ -6,6 +6,10 @@ icon: "fingerprint"
 
 ## What is antinuke?
 
+<Tip>
+  Antinuke is a part of greed premium.
+</Tip>
+
 Antinuke is a system to automatically set a limit of the amount of actions your staff can do. If that limit is exceeded, the staff will be punished and you'll stay safe from any harmful actions done to your server.
 
 ## Allowing users to edit the antinuke settings.
@@ -99,7 +103,9 @@ Antinuke has various modules that you can configure to protect your server.
     - `guildupdate` - Prevent unauthorized changes to server settings
     - `webhooks` - Prevent unauthorized webhook creation or usage
     - `vanityurl` - Protect your server's vanity URL
-    - `integrationcreate`, `integrationupdate`, `integrationdelete` - Monitor integration changes
+    - `integrationcreate` - Monitor integration creations
+    - `integrationupdate` - Monitor integration changes
+    - `integrationdelete` - Monitor integration deletions
   </Accordion>
   <Accordion title="Member Management">
     - `botadd` - Prevent unauthorized bot additions
@@ -108,14 +114,25 @@ Antinuke has various modules that you can configure to protect your server.
     - `memberprune` - Prevent unauthorized member pruning
   </Accordion>
   <Accordion title="Role and Channel Management">
-    - `rolecreate`, `roleupdate`, `roledelete` - Monitor role changes
-    - `channelcreate`, `channelupdate`, `channeldelete` - Monitor channel changes
+    - `rolecreate` - Monitor role creations
+    - `roleupdate` - Monitor role changes
+    - `roledelete` - Monitor role deletions
+    - `channelcreate` - Monitor channel creations
+    - `channelupdate` - Monitor channel changes
+    - `channeldelete` - Monitor channel deletions
   </Accordion>
   <Accordion title="Engagement and Media">
-    - `emojicreate`, `emojiupdate`, `emojidelete` - Monitor emoji changes
-    - `stickercreate`, `stickerupdate`, `stickerdelete` - Monitor sticker changes
-    - `soundboardcreate`, `soundboardupdate`, `soundboarddelete` - Monitor soundboard changes
-    - `invitecreate`, `invitedelete` - Monitor invite changes
+    - `emojicreate` - Monitor emoji creations
+    - `emojiupdate` - Monitor emoji changes
+    - `emojidelete` - Monitor emoji deletions
+    - `stickercreate` - Monitor sticker creations
+    - `stickerupdate` - Monitor sticker changes
+    - `stickerdelete` - Monitor sticker deletions
+    - `soundboardcreate` - Monitor soundboard creations
+    - `soundboardupdate` - Monitor soundboard changes
+    - `soundboarddelete` - Monitor soundboard deletions
+    - `invitecreate` - Monitor invite creations
+    - `invitedelete` - Monitor invite deletions
   </Accordion>
 </AccordionGroup>
 
@@ -168,4 +185,16 @@ Now, set the threshold.
 
 </CodeGroup>
 
-If you want, you can view settings for a module using the command `,antinuke module settings (module)` or simply `,antinuke (module)`.
+If you want, you can view settings for a module using the following commands:
+
+<CodeGroup>
+```javascript Command
+,antinuke module settings (module)
+```
+
+```javascript Example
+,antinuke module settings botadd
+```
+</CodeGroup>
+
+Alternatively, you can simply use `,antinuke (module)`.

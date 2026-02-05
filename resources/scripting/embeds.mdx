@@ -1,12 +1,12 @@
 ---
 title: Embeds
-description: "Master the fundamentals of Greed's custom embed scripting."
+description: "Master the fundamentals of greed's custom embed scripting."
 icon: code-xml
 ---
 
 ## Core Structure
 
-Greed uses a specialized token-based system for building embeds. Each component is defined within braces `{}` and follows a `key: value` pattern.
+greed uses a specialized token-based system for building embeds. Each component is defined within braces `{}` and follows a `key: value` pattern.
 
 The syntax for a standard parameter is:
 - `{` - Opens the parameter block.
@@ -16,7 +16,7 @@ The syntax for a standard parameter is:
 
 ### Block Separators
 
-To organize your script or separate individual embed properties, you can use `$v`. In Greed's engine, this acts as a newline separator, allowing the parser to clearly distinguish between different nodes.
+To organize your script or separate individual embed properties, you can use `$v`. In greed's engine, this acts as a newline separator, allowing the parser to clearly distinguish between different nodes.
 
 ```javascript Example
 {title: Hello World}$v{description: This is a custom embed!}
@@ -72,7 +72,7 @@ Some parameters support multiple values separated by `&&`.
 
 ## Mixing Text and Embeds
 
-By default, Greed attempts to identify if you are sending a raw text message or an embed script. If you want to ensure the bot parses your script correctly—especially when including variables—begin your message with `{embed}$v`.
+By default, greed attempts to identify if you are sending a raw text message or an embed script. If you want to ensure the bot parses your script correctly—especially when including variables—begin your message with `{embed}$v`.
 
 ```javascript Template
 {embed}$v{title: Welcome!}$v{description: Glad you joined us, {user.mention}!}

@@ -24,6 +24,7 @@
         "pages": [
           "moderation/antinuke",
           "moderation/antiraid",
+          "moderation/automod",
           "moderation/moderation",
           "moderation/fakepermissions"
         ]

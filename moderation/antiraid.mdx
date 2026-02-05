@@ -21,28 +21,130 @@ Antiraid consists of several modules that monitor join events to prevent raids.
 - **massjoin**: Detects when a large number of members join in a short period.
 - **avatar**: Detects members joining with the default Discord profile picture.
 - **newaccounts**: Detects members joining with accounts created very recently.
+- **massmention**: Detects and prevents mass mention raids.
+  <Tip>This module is part of greed premium.</Tip>
+- **unverifiedbots**: Prevents unverified bots from joining your server.
+  <Tip>This module is part of greed premium.</Tip>
+- **username**: Filters members joining with specific username patterns.
+  <Tip>This module is part of greed premium.</Tip>
 
 ### Module Configuration
 
 You can configure each module using the following commands:
 
 <CodeGroup>
-```javascript Toggle
+```javascript Command
 ,antiraid module (module) toggle (on/off)
 ```
 
-```javascript Threshold
-,antiraid module (module) threshold (value)
-```
-
-```javascript Punishment
-,antiraid module (module) punishment (action)
+```javascript Example
+,antiraid module massjoin toggle on
 ```
 </CodeGroup>
 
+<CodeGroup>
+```javascript Command
+,antiraid module (module) threshold (value)
+```
+
+```javascript Example
+,antiraid module massjoin threshold 10
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,antiraid module (module) punishment (action)
+```
+
+```javascript Example
+,antiraid module avatar punishment kick
+```
+</CodeGroup>
+
+## Username Patterns
+
 <Tip>
-  Example: `,antiraid module massjoin threshold 10` will trigger if 10 people join within the detection window.
+  Username patterns are part of greed premium.
 </Tip>
+
+You can manage username patterns to block specific types of accounts from joining.
+
+<CodeGroup>
+```javascript Command
+,antiraid username add (pattern)
+```
+
+```javascript Example
+,antiraid username add raid-bot-.*
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,antiraid username remove (pattern)
+```
+
+```javascript Example
+,antiraid username remove raid-bot-.*
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,antiraid username list
+```
+
+```javascript Example
+,antiraid username list
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,antiraid username action (kick/ban)
+```
+
+```javascript Example
+,antiraid username action ban
+```
+</CodeGroup>
+
+## Mass Mention
+
+<Tip>
+  Mass mention protection is part of greed premium.
+</Tip>
+
+Configure thresholds for mass mention detection.
+
+<CodeGroup>
+```javascript Command
+,antiraid massmention (on/off) [threshold] [action]
+```
+
+```javascript Example
+,antiraid massmention on 5 mute
+```
+</CodeGroup>
+
+## Unverified Bots
+
+<Tip>
+  Unverified bot protection is part of greed premium.
+</Tip>
+
+Set actions for unverified bots trying to join.
+
+<CodeGroup>
+```javascript Command
+,antiraid unverifiedbots (on/off) [action]
+```
+
+```javascript Example
+,antiraid unverifiedbots on kick
+```
+</CodeGroup>
 
 ## Lockdown
 
@@ -58,24 +160,68 @@ If your server is under an active raid, you can use the lockdown command to quic
 ```
 </CodeGroup>
 
+## Advanced Lockdown
+
+<Tip>
+  These commands are part of greed premium.
+</Tip>
+
+Quickly secure your server by locking channels or punishing members.
+
+<CodeGroup>
+```javascript Command
+,antiraid lockchannels
+```
+
+```javascript Example
+,antiraid lockchannels
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,antiraid punishmembers
+```
+
+```javascript Example
+,antiraid punishmembers
+```
+</CodeGroup>
+
 ## Logging
 
 It is highly recommended to set a log channel for antiraid to monitor its actions.
 
-```javascript
+<CodeGroup>
+```javascript Command
 ,antiraid logs (channel)
 ```
+
+```javascript Example
+,antiraid logs #raid-logs
+```
+</CodeGroup>
 
 ## Whitelisting
 
 You can whitelist specific users or roles from being affected by the antiraid.
 
 <CodeGroup>
-```javascript Add
+```javascript Command
 ,antiraid whitelist add (user/role)
 ```
 
-```javascript Remove
+```javascript Example
+,antiraid whitelist add @Moderator
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
 ,antiraid whitelist remove (user/role)
+```
+
+```javascript Example
+,antiraid whitelist remove @fe3murs
 ```
 </CodeGroup>

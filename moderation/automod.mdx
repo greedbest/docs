@@ -1,0 +1,348 @@
+---
+title: "Automod"
+icon: "robot"
+description: "Automatically moderate your server with filters, keywords, and strike systems."
+---
+
+## Overview
+
+greed's Automod system allows you to automatically filter out unwanted content and manage user behavior through a strike system. It provides a multi-layered approach to server security including content filters, custom regex matching, and a persistent violation tracking system.
+
+<Tip>
+  Most advanced automod features, including the strike system and regex builder, are part of greed premium.
+</Tip>
+
+## Filters
+
+Filters are the primary mechanism for detecting and punishing specific types of content in real-time.
+
+### Available Filters
+
+<AccordionGroup>
+  <Accordion title="Spam">
+    Detects messages containing repetitive characters or phrases, or messages sent too quickly.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Caps">
+    Detects messages containing excessive capital letters. You can configure the percentage of caps allowed.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Emojis">
+    Detects messages containing too many emojis.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Mass Mention">
+    Detects messages with a high number of user or role mentions.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Spoilers">
+    Filters out excessive use of spoiler tags.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Images">
+    Filters messages that contain only images or too many image attachments.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Invites">
+    Automatically blocks Discord invite links to other servers.
+  </Accordion>
+  <Accordion title="Links">
+    Filters out messages containing URLs or specific types of links.
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Keywords">
+    Matches messages against your custom keyword blacklist.
+  </Accordion>
+</AccordionGroup>
+
+### Filter Configuration
+
+Each filter can be configured individually with specific thresholds and punishment actions.
+
+<CodeGroup>
+```javascript Command
+,automod filter (filter) toggle (on/off)
+```
+
+```javascript Example
+,automod filter spam toggle on
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod filter (filter) action (warn/timeout/kick/ban/delete)
+```
+
+```javascript Example
+,automod filter caps action delete
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod filter (filter) threshold (number)
+```
+
+```javascript Example
+,automod filter caps threshold 70
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod filter settings (filter)
+```
+
+```javascript Example
+,automod filter settings invites
+```
+</CodeGroup>
+
+## Strike System
+
+<Tip>
+  The strike system is a greed premium feature.
+</Tip>
+
+The strike system tracks repeated violations and applies escalating punishments automatically as users accumulate strikes.
+
+### Strike Management
+
+<CodeGroup>
+```javascript Command
+,automod strikes toggle (on/off)
+```
+
+```javascript Example
+,automod strikes toggle on
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod strikes level (number) action (warn/timeout/kick/ban)
+```
+
+```javascript Example
+,automod strikes level 3 action kick
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod strikes decay (duration)
+```
+
+```javascript Example
+,automod strikes decay 24h
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod strikes cap (number)
+```
+
+```javascript Example
+,automod strikes cap 10
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod strikes view (user)
+```
+
+```javascript Example
+,automod strikes view @fe3murs
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod strikes reset (user)
+```
+
+```javascript Example
+,automod strikes reset @fe3murs
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod strikes settings
+```
+
+```javascript Example
+,automod strikes settings
+```
+</CodeGroup>
+
+## Custom Regex Patterns
+
+<Tip>
+  Regex rules are a greed premium feature.
+</Tip>
+
+For advanced users, greed allows you to create custom Regular Expression patterns to catch complex varieties of unwanted content.
+
+### Regex Builder Utility
+
+greed includes an interactive **Regex Builder** to help you create patterns without needing to learn complex regex syntax.
+
+<CodeGroup>
+```javascript Command
+,regex
+```
+
+```javascript Example
+,regex
+```
+</CodeGroup>
+
+### Regex Commands
+
+Once you have a pattern, use these commands to manage your custom filters:
+
+<CodeGroup>
+```javascript Command
+,automod regex add (pattern) --name [name]
+```
+
+```javascript Example
+,automod regex add spam|advertisement --name block-promo
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod regex remove (name)
+```
+
+```javascript Example
+,automod regex remove block-promo
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod regex list
+```
+
+```javascript Example
+,automod regex list
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod regex test (pattern) (text)
+```
+
+```javascript Example
+,automod regex test spam|promo "free nitro here"
+```
+</CodeGroup>
+
+## Keywords and Blacklist
+
+Block specific words or domains from your server.
+
+### Blacklist (Domains)
+
+<CodeGroup>
+```javascript Command
+,automod blacklist add (domain) [reason]
+```
+
+```javascript Example
+,automod blacklist add discord.gg/scam Selling fake nitro
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod blacklist remove (domain)
+```
+
+```javascript Example
+,automod blacklist remove discord.gg/scam
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod blacklist list
+```
+
+```javascript Example
+,automod blacklist list
+```
+</CodeGroup>
+
+### Keyword List
+
+<CodeGroup>
+```javascript Command
+,automod keywords add (word)
+```
+
+```javascript Example
+,automod keywords add free nitro
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod keywords remove (word)
+```
+
+```javascript Example
+,automod keywords remove free nitro
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod keywords list
+```
+
+```javascript Example
+,automod keywords list
+```
+</CodeGroup>
+
+## Whitelisting
+
+Exempt specific members, roles, or channels from automod checks.
+
+<CodeGroup>
+```javascript Command
+,automod whitelist add (user/role/channel)
+```
+
+```javascript Example
+,automod whitelist add @Moderator
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod whitelist remove (user/role/channel)
+```
+
+```javascript Example
+,automod whitelist remove #general
+```
+</CodeGroup>
+
+<CodeGroup>
+```javascript Command
+,automod whitelist list
+```
+
+```javascript Example
+,automod whitelist list
+```
+</CodeGroup>

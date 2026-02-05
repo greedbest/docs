@@ -1,6 +1,6 @@
 ---
 title: "Automod"
-icon: "robot"
+icon: "bot"
 description: "Automatically moderate your server with filters, keywords, and strike systems."
 ---
 
@@ -20,38 +20,160 @@ Filters are the primary mechanism for detecting and punishing specific types of 
 
 <AccordionGroup>
   <Accordion title="Spam">
-    Detects messages containing repetitive characters or phrases, or messages sent too quickly.
+    Detects messages sent too quickly by a single user.
+    - **Threshold:** Number of messages allowed within a 10-second window.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter spam threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter spam threshold 5
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Caps">
-    Detects messages containing excessive capital letters. You can configure the percentage of caps allowed.
+    Detects messages containing excessive capital letters (only for messages 10+ characters).
+    - **Threshold:** Maximum percentage (%) of uppercase characters allowed.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter caps threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter caps threshold 70
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Emojis">
     Detects messages containing too many emojis.
+    - **Threshold:** Maximum number of emojis allowed per message.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter emojis threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter emojis threshold 10
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Mass Mention">
     Detects messages with a high number of user or role mentions.
+    - **Threshold:** Maximum total mentions allowed per message.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter massmention threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter massmention threshold 5
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Spoilers">
-    Filters out excessive use of spoiler tags.
+    Filters out excessive use of spoiler tags or spoiler attachments.
+    - **Threshold:** Maximum number of spoilers allowed per message.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter spoilers threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter spoilers threshold 3
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Images">
-    Filters messages that contain only images or too many image attachments.
+    Filters messages that contain too many image attachments.
+    - **Threshold:** Maximum number of images allowed per message.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter images threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter images threshold 2
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Invites">
     Automatically blocks Discord invite links to other servers.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter invites toggle (on/off)
+      ```
+      ```javascript Example
+      ,automod filter invites toggle on
+      ```
+      </CodeGroup>
   </Accordion>
   <Accordion title="Links">
     Filters out messages containing URLs or specific types of links.
+    - **Threshold:** Maximum number of links allowed per message.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filter links threshold (number)
+      ```
+      ```javascript Example
+      ,automod filter links threshold 3
+      ```
+      </CodeGroup>
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Repetition">
+    Detects repetitive messages or high similarity between consecutive messages.
+    - **Threshold:** Number of similar messages before triggering.
+    - **Similarity:** Percentage (%) match required to be considered "repeated".
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filters repetition threshold (2-20)
+      ,automod filters repetition similarity (50-100)
+      ```
+      ```javascript Example
+      ,automod filters repetition threshold 3
+      ,automod filters repetition similarity 85
+      ```
+      </CodeGroup>
+    <Tip>This filter is part of greed premium.</Tip>
+  </Accordion>
+  <Accordion title="Wall of Text">
+    Detects messages that are too long or have too many newlines.
+    - **Max Newlines:** Maximum newline characters allowed.
+    - **Max Length:** Maximum total characters allowed.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod filters walloftext newlines (3-50)
+      ,automod filters walloftext length (500-4000)
+      ```
+      ```javascript Example
+      ,automod filters walloftext newlines 15
+      ,automod filters walloftext length 2500
+      ```
+      </CodeGroup>
     <Tip>This filter is part of greed premium.</Tip>
   </Accordion>
   <Accordion title="Keywords">
     Matches messages against your custom keyword blacklist.
+    - **Usage:**
+      <CodeGroup>
+      ```javascript Command
+      ,automod keywords add (word)
+      ```
+      ```javascript Example
+      ,automod keywords add free nitro
+      ```
+      </CodeGroup>
   </Accordion>
 </AccordionGroup>
 

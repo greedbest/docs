@@ -100,39 +100,68 @@ Antinuke has various modules that you can configure to protect your server.
 
 <AccordionGroup>
   <Accordion title="Administrative Actions">
-    - `guildupdate` - Prevent unauthorized changes to server settings
-    - `webhooks` - Prevent unauthorized webhook creation or usage
-    - `vanityurl` - Protect your server's vanity URL
-    - `integrationcreate` - Monitor integration creations
-    - `integrationupdate` - Monitor integration changes
-    - `integrationdelete` - Monitor integration deletions
+    Protect your server from unauthorized administrative changes.
+    - `guildupdate` - Changes to name, region, icon, or settings.
+    - `webhooks` - Creation or usage of webhooks.
+    - `vanityurl` - Changes to the server vanity URL.
+    - `integrationcreate` - Adding new integrations/bots.
+    - `integrationupdate` - Modifying existing integrations.
+    - `integrationdelete` - Removing integrations.
+    - **Usage Example:**
+      <CodeGroup>
+      ```javascript Command
+      ,antinuke module guildupdate threshold 1
+      ```
+      ```javascript Example
+      ,antinuke module webhooks punishment ban
+      ```
+      </CodeGroup>
   </Accordion>
   <Accordion title="Member Management">
-    - `botadd` - Prevent unauthorized bot additions
-    - `kick` - Limit the amount of members staff can kick
-    - `ban` - Limit the amount of members staff can ban
-    - `memberprune` - Prevent unauthorized member pruning
+    Prevent mass-kicks, bans, or unauthorized bot additions.
+    - `botadd` - When a bot is added by a non-whitelisted user.
+    - `kick` - Limits the number of members a staff can kick.
+    - `ban` - Limits the number of members a staff can ban.
+    - `memberprune` - Unauthorized server pruning actions.
+    - **Usage Example:**
+      <CodeGroup>
+      ```javascript Command
+      ,antinuke module ban threshold 3
+      ```
+      ```javascript Example
+      ,antinuke module kick punishment kick
+      ```
+      </CodeGroup>
   </Accordion>
   <Accordion title="Role and Channel Management">
-    - `rolecreate` - Monitor role creations
-    - `roleupdate` - Monitor role changes
-    - `roledelete` - Monitor role deletions
-    - `channelcreate` - Monitor channel creations
-    - `channelupdate` - Monitor channel changes
-    - `channeldelete` - Monitor channel deletions
+    Secure your server structure from deletion or manipulation.
+    - `rolecreate` / `roleupdate` / `roledelete`
+    - `channelcreate` / `channelupdate` / `channeldelete`
+    - **Usage Example:**
+      <CodeGroup>
+      ```javascript Command
+      ,antinuke module channeldelete threshold 2
+      ```
+      ```javascript Example
+      ,antinuke module roledelete punishment ban
+      ```
+      </CodeGroup>
   </Accordion>
   <Accordion title="Engagement and Media">
-    - `emojicreate` - Monitor emoji creations
-    - `emojiupdate` - Monitor emoji changes
-    - `emojidelete` - Monitor emoji deletions
-    - `stickercreate` - Monitor sticker creations
-    - `stickerupdate` - Monitor sticker changes
-    - `stickerdelete` - Monitor sticker deletions
-    - `soundboardcreate` - Monitor soundboard creations
-    - `soundboardupdate` - Monitor soundboard changes
-    - `soundboarddelete` - Monitor soundboard deletions
-    - `invitecreate` - Monitor invite creations
-    - `invitedelete` - Monitor invite deletions
+    Protect your server's creative assets and engagement tools.
+    - `emojicreate` / `emojiupdate` / `emojidelete`
+    - `stickercreate` / `stickerupdate` / `stickerdelete`
+    - `soundboardcreate` / `soundboardupdate` / `soundboarddelete`
+    - `invitecreate` / `invitedelete`
+    - **Usage Example:**
+      <CodeGroup>
+      ```javascript Command
+      ,antinuke module invitedelete threshold 5
+      ```
+      ```javascript Example
+      ,antinuke module soundboardcreate threshold 3
+      ```
+      </CodeGroup>
   </Accordion>
 </AccordionGroup>
 

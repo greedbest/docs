@@ -1,0 +1,68 @@
+---
+title: "Leave"
+icon: "person-to-door"
+---
+
+Setup customizable goodbye messages for your server
+
+## Overview
+
+Set a customizable goodbye message that automatically sends once a user leaves the server.
+
+## Setting up
+
+Firstly, run `,goodbye setup` to set the leave message up. You can always remove the leave message with `,goodbye reset`
+
+## Configuring the goodbye channel.
+
+Set the channel for the goodbye message to be sent in.
+
+<CodeGroup>
+
+```javascript Syntax
+,goodbye channel (channel)
+```
+
+
+```javascript Example
+,goodbye channel #goodbye
+```
+
+</CodeGroup>
+
+## Configuring the goodbye message
+
+Set the message that will be sent once a user leaves the server
+
+<Tip>
+  You can use [embeds](/resources/scripting/embeds) with dynamic [variables](/resources/scripting/variables) in your message
+</Tip>
+
+<CodeGroup>
+
+```javascript Syntax
+,goodbye message (message)
+```
+
+
+```javascript Example
+,goodbye message {embed}$v{title: {user.name} has left}
+```
+
+</CodeGroup>
+
+## Testing and viewing the goodbye message
+
+You can easily test or view your set goodbye message using `,goodbye test` and `,goodbye view`
+
+```javascript
+,goodbye test
+```
+
+Shows the message that will be sent, using you as the user leaving.
+
+```javascript
+,goodbye view
+```
+
+Shows the raw code for the message, like your embed code.

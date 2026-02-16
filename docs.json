@@ -36,6 +36,7 @@
             "group": "Automation",
             "icon": "cog",
             "pages": [
+              "server-configuration/automation/leave",
               "server-configuration/automation/welcome"
             ]
           },

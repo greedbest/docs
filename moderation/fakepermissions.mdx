@@ -17,6 +17,7 @@ Fake permissions allow you to grant "virtual" permissions to roles. This means m
 Grant specific permissions to a role using the `,fakepermissions add` command.
 
 <CodeGroup>
+
 ```javascript Command
 ,fakepermissions add (role) (permissions)
 ```
@@ -24,6 +25,7 @@ Grant specific permissions to a role using the `,fakepermissions add` command.
 ```javascript Example
 ,fakepermissions add @Moderators kick_members, ban_members
 ```
+
 </CodeGroup>
 
 <Info>
@@ -35,25 +37,29 @@ Grant specific permissions to a role using the `,fakepermissions add` command.
 To remove specific permissions from a role, use the `,fakepermissions remove` command.
 
 <CodeGroup>
+
 ```javascript Command
-,fakepermissions remove (role) (permissions)
+,fakepermissions remove (role) 
 ```
 
 ```javascript Example
-,fakepermissions remove @Moderators ban_members
+,fakepermissions remove @Moderators 
 ```
+
 </CodeGroup>
 
 ## Managing Configurations
 
 ### Viewing all permissions
+
 Use the `,fakepermissions list` command to view all roles and their assigned fake permissions in your server.
 
-### Clearing a role
+### reseting a role
+
 To remove all fake permissions from a specific role at once, use the clear subcommand.
 
 ```javascript
-,fakepermissions clear (role)
+,fakepermissions reset
 ```
 
 ## Supported Permissions
@@ -61,48 +67,48 @@ To remove all fake permissions from a specific role at once, use the clear subco
 You can grant any of the following permissions via the fake permissions system:
 
 <Accordion title="View all valid permissions">
-- `create_instant_invite`
-- `kick_members`
-- `ban_members`
-- `administrator`
-- `manage_channels`
-- `manage_guild`
-- `add_reactions`
-- `view_audit_log`
-- `priority_speaker`
-- `stream`
-- `view_channel`
-- `send_messages`
-- `send_tts_messages`
-- `manage_messages`
-- `embed_links`
-- `attach_files`
-- `read_message_history`
-- `mention_everyone`
-- `use_external_emojis`
-- `view_guild_insights`
-- `connect`
-- `speak`
-- `mute_members`
-- `deafen_members`
-- `move_members`
-- `use_vad`
-- `change_nickname`
-- `manage_nicknames`
-- `manage_roles`
-- `manage_webhooks`
-- `manage_emojis_and_stickers`
-- `use_application_commands`
-- `request_to_speak`
-- `manage_events`
-- `manage_threads`
-- `create_public_threads`
-- `create_private_threads`
-- `use_external_stickers`
-- `send_messages_in_threads`
-- `use_embedded_activities`
-- `moderate_members`
-- `use_soundboard`
-- `use_external_sounds`
-- `send_voice_messages`
+  - `create_instant_invite`
+  - `kick_members`
+  - `ban_members`
+  - `administrator`
+  - `manage_channels`
+  - `manage_guild`
+  - `add_reactions`
+  - `view_audit_log`
+  - `priority_speaker`
+  - `stream`
+  - `view_channel`
+  - `send_messages`
+  - `send_tts_messages`
+  - `manage_messages`
+  - `embed_links`
+  - `attach_files`
+  - `read_message_history`
+  - `mention_everyone`
+  - `use_external_emojis`
+  - `view_guild_insights`
+  - `connect`
+  - `speak`
+  - `mute_members`
+  - `deafen_members`
+  - `move_members`
+  - `use_vad`
+  - `change_nickname`
+  - `manage_nicknames`
+  - `manage_roles`
+  - `manage_webhooks`
+  - `manage_emojis_and_stickers`
+  - `use_application_commands`
+  - `request_to_speak`
+  - `manage_events`
+  - `manage_threads`
+  - `create_public_threads`
+  - `create_private_threads`
+  - `use_external_stickers`
+  - `send_messages_in_threads`
+  - `use_embedded_activities`
+  - `moderate_members`
+  - `use_soundboard`
+  - `use_external_sounds`
+  - `send_voice_messages`
 </Accordion>

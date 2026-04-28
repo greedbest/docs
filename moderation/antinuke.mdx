@@ -6,10 +6,6 @@ icon: "fingerprint"
 
 ## What is antinuke?
 
-<Tip>
-  Antinuke is a part of greed premium.
-</Tip>
-
 Antinuke is a system to automatically set a limit of the amount of actions your staff can do. If that limit is exceeded, the staff will be punished and you'll stay safe from any harmful actions done to your server.
 
 ## Allowing users to edit the antinuke settings.
@@ -23,24 +19,22 @@ By default, only the **server owner** can manage the antinuke configuration. Usi
 <CodeGroup>
 
 ```javascript Command
-,antinuke admin add (user)
+,antinuke admin (@user)
 ```
 
-
 ```javascript Example
-,antinuke admin add @fe3murs
+,antinuke admin @fe3murs
 ```
 
 </CodeGroup>
 
-To **remove** an antinuke admin, you simply use the `,antinuke admin remove` command.
+To **remove** an antinuke admin, you simply use the same `,antinuke admin ` command.
 
 <CodeGroup>
 
 ```javascript Command
-,antinuke admin remove (user)
+,antinuke admin (@user)
 ```
-
 
 ```javascript Example
 ,antinuke admin remove @fe3murs
@@ -52,7 +46,7 @@ You can quickly view all antinuke admins using the `,antinuke admin list` comman
 
 ## Whitelisting users from the antinuke
 
-By default, **everyone** is subject to being affected by the antinuke. To exempt a user, simply whitelist them using the `,antinuke whitelist add` command.
+By default, **everyone** is subject to being affected by the antinuke. To exempt a user, simply whitelist them using the `,antinuke whitelist` command.
 
 <Warning>
   This is a risky command, as it allows the user to completely bypass all antinuke restrictions.
@@ -61,36 +55,34 @@ By default, **everyone** is subject to being affected by the antinuke. To exempt
 <CodeGroup>
 
 ```javascript Command
-,antinuke whitelist add (user)
+,antinuke whitelist (userid)
 ```
 
-
 ```javascript Example
-,antinuke whitelist add @fe3murs
+,antinuke whitelist (userid)
 ```
 
 </CodeGroup>
 
-To **remove** users from the whitelist, simply use the `,antinuke whitelist remove` command.
+To **remove** users from the whitelist, simply use the same  `,antinuke whitelist` command.
 
 <CodeGroup>
 
 ```javascript Command
-,antinuke whitelist remove (user)
+,antinuke whitelist (userid)
 ```
 
-
 ```javascript Example
-,antinuke whitelist remove @fe3murs
+,antinuke whitelist (userid)
 ```
 
 </CodeGroup>
 
-You can view all whitelisted users by using the `,antinuke whitelist list` command.
+You can view all whitelisted users by using the `,antinuke list` command.
 
 ## Configuring the antinuke
 
-Configure the antinuke simply by using these commands. Use `,antinuke` to view the antinuke settings at anytime. **Make sure to toggle on antinuke using** `,antinuke toggle on`
+Configure the antinuke simply by using these commands. Use `,antinuke` to view the antinuke settings at anytime. **Make sure to toggle on antinuke using** `,antinuke enable`
 
 ## Setting up antinuke modules.
 
@@ -101,6 +93,7 @@ Antinuke has various modules that you can configure to protect your server.
 <AccordionGroup>
   <Accordion title="Administrative Actions">
     Protect your server from unauthorized administrative changes.
+
     - `guildupdate` - Changes to name, region, icon, or settings.
     - `webhooks` - Creation or usage of webhooks.
     - `vanityurl` - Changes to the server vanity URL.
@@ -117,8 +110,10 @@ Antinuke has various modules that you can configure to protect your server.
       ```
       </CodeGroup>
   </Accordion>
+
   <Accordion title="Member Management">
     Prevent mass-kicks, bans, or unauthorized bot additions.
+
     - `botadd` - When a bot is added by a non-whitelisted user.
     - `kick` - Limits the number of members a staff can kick.
     - `ban` - Limits the number of members a staff can ban.
@@ -133,8 +128,10 @@ Antinuke has various modules that you can configure to protect your server.
       ```
       </CodeGroup>
   </Accordion>
+
   <Accordion title="Role and Channel Management">
     Secure your server structure from deletion or manipulation.
+
     - `rolecreate` / `roleupdate` / `roledelete`
     - `channelcreate` / `channelupdate` / `channeldelete`
     - **Usage Example:**
@@ -147,8 +144,10 @@ Antinuke has various modules that you can configure to protect your server.
       ```
       </CodeGroup>
   </Accordion>
+
   <Accordion title="Engagement and Media">
     Protect your server's creative assets and engagement tools.
+
     - `emojicreate` / `emojiupdate` / `emojidelete`
     - `stickercreate` / `stickerupdate` / `stickerdelete`
     - `soundboardcreate` / `soundboardupdate` / `soundboarddelete`
@@ -165,17 +164,16 @@ Antinuke has various modules that you can configure to protect your server.
   </Accordion>
 </AccordionGroup>
 
-Firstly, toggle your modules on.
+Firstly, toggle your antinuke  on.
 
 <CodeGroup>
 
 ```javascript Command
-,antinuke module (module) toggle (on/off)
+,antinuke ban (status) [flags]
 ```
 
-
 ```javascript Example
-,antinuke module botadd toggle on
+,antinuke ban on (flags)
 ```
 
 </CodeGroup>
@@ -185,12 +183,11 @@ Next, set the punishment for your modules.
 <CodeGroup>
 
 ```javascript Command
-,antinuke module (module) punishment (punishment)
+,antinuke (module) (status) (punishment)
 ```
 
-
 ```javascript Example
-,antinuke module botadd punishment ban
+,antinuke botadd on --do kick
 ```
 
 </CodeGroup>
@@ -204,12 +201,11 @@ Now, set the threshold.
 <CodeGroup>
 
 ```javascript Command
-,antinuke module (module) threshold (threshold)
+,antinuke (module) threshold (threshold)
 ```
 
-
 ```javascript Example
-,antinuke module botadd threshold 5
+,antinuke botadd on --do kick --threshold 2
 ```
 
 </CodeGroup>
@@ -217,13 +213,15 @@ Now, set the threshold.
 If you want, you can view settings for a module using the following commands:
 
 <CodeGroup>
+
 ```javascript Command
-,antinuke module settings (module)
+,antinuke config
 ```
 
 ```javascript Example
-,antinuke module settings botadd
+,antinuke config
 ```
+
 </CodeGroup>
 
 Alternatively, you can simply use `,antinuke (module)`.

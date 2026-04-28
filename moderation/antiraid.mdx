@@ -21,79 +21,99 @@ Antiraid consists of several modules that monitor join events to prevent raids.
 <AccordionGroup>
   <Accordion title="Mass Join">
     Detects when a large number of members join your server in a short period.
+
     - **Usage:**
       <CodeGroup>
       ```javascript Command
-      ,antiraid module massjoin threshold (number)
+      ,antiraid massjoin (status) [flags]
       ```
       ```javascript Example
-      ,antiraid module massjoin threshold 10
+      ,antiraid massjoin on --threshold 5 --do ban --lock true --punish true
       ```
       </CodeGroup>
   </Accordion>
+
   <Accordion title="Avatar">
     Detects members joining with the default Discord profile picture.
+
     - **Usage:**
       <CodeGroup>
       ```javascript Command
-      ,antiraid module avatar toggle (on/off)
+      ,antiraid avatar (status) [flags]
       ```
       ```javascript Example
-      ,antiraid module avatar toggle on
+      ,antiraid avatar on --do kick
       ```
       </CodeGroup>
   </Accordion>
+
   <Accordion title="New Accounts">
     Detects members joining with accounts created very recently.
+
     - **Threshold:** Age in days (e.g., 3 days).
     - **Usage:**
       <CodeGroup>
       ```javascript Command
-      ,antiraid module newaccounts threshold (days)
+      ,antiraid age (status) [flags]
       ```
       ```javascript Example
-      ,antiraid module newaccounts threshold 3
+      ,antiraid age on --threshold 8 --do ban
       ```
       </CodeGroup>
   </Accordion>
+
   <Accordion title="Mass Mention">
     Detects and prevents mass mention raids from incoming members.
+
     - **Usage:**
       <CodeGroup>
       ```javascript Command
-      ,antiraid massmention (on/off) [threshold] [action]
+      ,antiraid massmention [status] [flags]
       ```
       ```javascript Example
-      ,antiraid massmention on 5 mute
+      ,antiraid massmention on (flags)
       ```
       </CodeGroup>
-    <Tip>This module is part of greed premium.</Tip>
+
+    <Tip>
+      This module is part of greed premium.
+    </Tip>
   </Accordion>
+
   <Accordion title="Unverified Bots">
     Prevents unverified bots from joining your server.
+
     - **Usage:**
       <CodeGroup>
       ```javascript Command
-      ,antiraid unverifiedbots (on/off) [action]
+      ,antiraid unverifiedbots [status] [flags]
       ```
       ```javascript Example
-      ,antiraid unverifiedbots on kick
+      ,antiraid unverifiedbots on (flags)
       ```
       </CodeGroup>
-    <Tip>This module is part of greed premium.</Tip>
+
+    <Tip>
+      This module is part of greed premium.
+    </Tip>
   </Accordion>
+
   <Accordion title="Username">
     Filters members joining with specific username patterns.
+
     - **Usage:**
       <CodeGroup>
       ```javascript Command
-      ,antiraid username add (pattern)
+      ,antiraid username
       ```
       ```javascript Example
-      ,antiraid username add raid-bot-.*
+      ,antiraid username
       ```
       </CodeGroup>
-    <Tip>This module is part of greed premium.</Tip>
+
+    <Tip>
+      This module is part of greed premium.
+    </Tip>
   </Accordion>
 </AccordionGroup>
 
@@ -102,33 +122,39 @@ Antiraid consists of several modules that monitor join events to prevent raids.
 You can configure each module using the following commands:
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid module (module) toggle (on/off)
+,antiraid module [status]
 ```
 
 ```javascript Example
-,antiraid module massjoin toggle on
+,antiraid massjoin on
 ```
+
 </CodeGroup>
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid module (module) threshold (value)
+,antiraid (module) threshold (value)
 ```
 
 ```javascript Example
-,antiraid module massjoin threshold 10
+,antiraid massjoin on --threshold 5
 ```
+
 </CodeGroup>
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid module (module) punishment (action)
+,antiraid (module) (status) (action)
 ```
 
 ```javascript Example
-,antiraid module avatar punishment kick
+,antiraid avatar on --do kick
 ```
+
 </CodeGroup>
 
 ## Username Patterns
@@ -140,6 +166,7 @@ You can configure each module using the following commands:
 You can manage username patterns to block specific types of accounts from joining.
 
 <CodeGroup>
+
 ```javascript Command
 ,antiraid username add (pattern)
 ```
@@ -147,9 +174,11 @@ You can manage username patterns to block specific types of accounts from joinin
 ```javascript Example
 ,antiraid username add raid-bot-.*
 ```
+
 </CodeGroup>
 
 <CodeGroup>
+
 ```javascript Command
 ,antiraid username remove (pattern)
 ```
@@ -157,9 +186,11 @@ You can manage username patterns to block specific types of accounts from joinin
 ```javascript Example
 ,antiraid username remove raid-bot-.*
 ```
+
 </CodeGroup>
 
 <CodeGroup>
+
 ```javascript Command
 ,antiraid username list
 ```
@@ -167,9 +198,11 @@ You can manage username patterns to block specific types of accounts from joinin
 ```javascript Example
 ,antiraid username list
 ```
+
 </CodeGroup>
 
 <CodeGroup>
+
 ```javascript Command
 ,antiraid username action (kick/ban)
 ```
@@ -177,98 +210,55 @@ You can manage username patterns to block specific types of accounts from joinin
 ```javascript Example
 ,antiraid username action ban
 ```
+
 </CodeGroup>
 
 ## Mass Mention
 
-<Tip>
-  Mass mention protection is part of greed premium.
-</Tip>
-
 Configure thresholds for mass mention detection.
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid massmention (on/off) [threshold] [action]
+,antiraid (module) [status]
 ```
 
 ```javascript Example
-,antiraid massmention on 5 mute
+,antiraid massmention on flags]
 ```
+
 </CodeGroup>
 
 ## Unverified Bots
 
-<Tip>
-  Unverified bot protection is part of greed premium.
-</Tip>
-
 Set actions for unverified bots trying to join.
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid unverifiedbots (on/off) [action]
+,antiraid unverifiedbots [status] [flags]
 ```
 
 ```javascript Example
 ,antiraid unverifiedbots on kick
 ```
+
 </CodeGroup>
 
-## Lockdown
+## state
 
 If your server is under an active raid, you can use the lockdown command to quickly restrict access.
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid lockdown (on/off)
+,antiraid state (status)
 ```
 
 ```javascript Example
-,antiraid lockdown on
-```
-</CodeGroup>
-
-## Advanced Lockdown
-
-<Tip>
-  These commands are part of greed premium.
-</Tip>
-
-Quickly secure your server by locking channels or punishing members.
-
-<CodeGroup>
-```javascript Command
-,antiraid lockchannels
+,antiraid state on
 ```
 
-```javascript Example
-,antiraid lockchannels
-```
-</CodeGroup>
-
-<CodeGroup>
-```javascript Command
-,antiraid punishmembers
-```
-
-```javascript Example
-,antiraid punishmembers
-```
-</CodeGroup>
-
-## Logging
-
-It is highly recommended to set a log channel for antiraid to monitor its actions.
-
-<CodeGroup>
-```javascript Command
-,antiraid logs (channel)
-```
-
-```javascript Example
-,antiraid logs #raid-logs
-```
 </CodeGroup>
 
 ## Whitelisting
@@ -276,21 +266,27 @@ It is highly recommended to set a log channel for antiraid to monitor its action
 You can whitelist specific users or roles from being affected by the antiraid.
 
 <CodeGroup>
+
 ```javascript Command
-,antiraid whitelist add (user/role)
+,antiraid whitelist [user]
 ```
 
 ```javascript Example
-,antiraid whitelist add @Moderator
+,antiraid whitelist @fe3murs
 ```
+
 </CodeGroup>
 
+To **remove** an antiraid whitelisted , you simply use the same `,antiraid whitelist ` command.
+
 <CodeGroup>
-```javascript Command
-,antiraid whitelist remove (user/role)
+
+```javascript command
+,antiraid whitelist [user]
 ```
 
-```javascript Example
-,antiraid whitelist remove @fe3murs
+```text example
+,antiraid whitelist @fe3murs
 ```
+
 </CodeGroup>

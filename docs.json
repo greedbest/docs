@@ -120,5 +120,10 @@
     "socials": {
       "discord": "https://discord.com/invite/greed"
     }
+  },
+  "fonts": {
+    "family": "Satoshi",
+    "source": "https://greed.best/fonts/Satoshi-Regular.woff",
+    "format": "woff"
   }
 }

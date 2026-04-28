@@ -122,7 +122,7 @@
     }
   },
   "fonts": {
-    "family": "Satoshi",
+    "family": "Plus Jakarta Sans",
     "weight": 500,
     "source": "https://greed.best/fonts/Satoshi-Regular.woff",
     "format": "woff"

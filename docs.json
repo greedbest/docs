@@ -123,6 +123,7 @@
   },
   "fonts": {
     "family": "Satoshi",
+    "weight": 500,
     "source": "https://greed.best/fonts/Satoshi-Regular.woff",
     "format": "woff"
   }

@@ -13,6 +13,7 @@ greed features a powerful music system that allows you to play high-quality audi
 Get started by joining a voice channel and playing your favorite tracks.
 
 <CodeGroup>
+
 ```javascript Play
 ,play (query or URL)
 ```
@@ -28,6 +29,7 @@ Get started by joining a voice channel and playing your favorite tracks.
 ```javascript Volume
 ,volume (0-200)
 ```
+
 </CodeGroup>
 
 ---
@@ -40,10 +42,9 @@ Get started by joining a voice channel and playing your favorite tracks.
     - `,resume`: Continue playing a paused track.
     - `,stop`: Stop the music and clear the queue.
   </Accordion>
+
   <Accordion title="Queue Management">
     - `,queue`: View all tracks currently in the queue.
-    - `,clearqueue`: Remove all pending tracks.
-    - `,shuffle`: Randomize the order of the queue.
   </Accordion>
 </AccordionGroup>
 
@@ -54,17 +55,25 @@ Get started by joining a voice channel and playing your favorite tracks.
 Restrict music controls and enable smart features via the settings system.
 
 ### DJ Role
+
 Set a role that is required to use music commands.
+
 ```javascript Syntax
 ,settings dj (role)
 ```
-<Tip>Requires **Manage Server** permissions to configure.</Tip>
+
+<Tip>
+  Requires **Manage Server** permissions to configure.
+</Tip>
 
 ### Autoplay
+
 Enabling autoplay will automatically add similar tracks to the queue when the current one ends.
+
 ```javascript Syntax
-,settings autoplay on/off
+,settings autoplay (status)
 ```
 
 ### Inactivity Timer
+
 greed will automatically leave the voice channel if no music is playing and the channel is empty to save resources and keep your server clean.

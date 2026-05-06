@@ -51,7 +51,6 @@ You can customize messages for: `ban`, `kick`, `timeout`, `softban`, `hardban`, 
 ,invoke (action) dm (message)
 ```
 
-
 ```javascript Channel Response
 ,invoke (action) message (message)
 ```
@@ -76,12 +75,15 @@ You can use the following variables in your messages:
   <Accordion title="View Configurations">
     Use `,invoke list` or `,invoke settings` to see all your active message customizations.
   </Accordion>
+
   <Accordion title="Test Messages">
     Use `,invoke test (action)` to see how your customized message looks.
   </Accordion>
+
   <Accordion title="Variables Reference">
     Use `,invoke variables` to see a full list of available variables in-app.
   </Accordion>
+
   <Accordion title="Reset Configuration">
     Use `,invoke reset (action)` to return a specific action to its default message.
   </Accordion>
@@ -97,9 +99,8 @@ You can quickly remove a user's dangerous permissions (like Administrator or Man
 ,strip (user) [reason]
 ```
 
-
 ```javascript Example
-,strip @fe3murs being abusive
+,strip @mopeys being abusive
 ```
 
 </CodeGroup>
@@ -115,6 +116,7 @@ If you prefer to configure moderation channels and roles manually instead of usi
     - `,settings modlog #channel`: Sets the channel where moderation actions are logged.
     - `,settings resetcases`: Wipes the server's moderation history and resets the case counter.
   </Accordion>
+
   <Accordion title="Restricted Roles">
     - `,settings imuted @Role`: Manually set the role used for Image Mutes.
     - `,settings rmuted @Role`: Manually set the role used for Reaction Mutes.
@@ -145,7 +147,6 @@ Set up automated actions that occur when a user reaches a certain number of warn
 ```javascript Syntax
 ,settings warn punishment add (threshold) (action) [duration]
 ```
-
 
 ```javascript Examples
 ,settings warn punishment add 3 timeout 1h

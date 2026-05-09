@@ -1,7 +1,7 @@
 ---
-title: Embeds
+title: "Embeds"
 description: "Master the fundamentals of greed's custom embed scripting."
-icon: code-xml
+icon: "code-xml"
 ---
 
 ## Core Structure
@@ -9,6 +9,7 @@ icon: code-xml
 greed uses a specialized token-based system for building embeds. Each component is defined within braces `{}` and follows a `key: value` pattern.
 
 The syntax for a standard parameter is:
+
 - `{` - Opens the parameter block.
 - `key:` - Identifies the property (e.g., `title`, `description`).
 - `value` - The content or configuration for that property.
@@ -22,12 +23,16 @@ To organize your script or separate individual embed properties, you can use `$v
 {title: Hello World}$v{description: This is a custom embed!}
 ```
 
+<Frame>
+  ![Image2\[1\]](/images/image2[1].png)
+</Frame>
+
 ## Available Parameters
 
 Most parameters take a simple text or URL value.
 
 | Key | Description | Example |
-| :--- | :--- | :--- |
+| :-- | :-- | :-- |
 | `content` | Plain text message outside the embed. | `{content: Hello {user}}` |
 | `title` | The main title of the embed. | `{title: Server News}` |
 | `description` | The body text of the embed. | `{description: Join our Discord!}` |
@@ -42,32 +47,55 @@ Most parameters take a simple text or URL value.
 Some parameters support multiple values separated by `&&`.
 
 <AccordionGroup>
-    <Accordion title="Author">
-        Set the name, icon, and an optional link for the author section.
-        - **Syntax:** `{author: name && icon && url}`
-        - **Example:** `{author: {user.name} && {user.avatar}}`
-    </Accordion>
+  <Accordion title="Author">
+    Set the name, icon, and an optional link for the author section.
 
-    <Accordion title="Fields">
-        Add organized rows of data. You can include `inline` at the end to place fields side-by-side.
-        - **Syntax:** `{field: name && value && inline}`
-        - **Example:** `{field: User ID && {user.id} && inline}`
-        
-        <Tip>You can also use the plural `{fields: ...}` node to define multiple fields at once: `{fields: name: F1 && value: V1 && name: F2 && value: V2}`</Tip>
-    </Accordion>
+    - **Syntax:** `{author: name && icon && url}`
+    - **Example:** `{author: {user.name} && {user.avatar}}`
 
-    <Accordion title="Footer">
-        Configure the small text and icon at the very bottom.
-        - **Syntax:** `{footer: text && icon}`
-        - **Example:** `{footer: Sent by {user.name} && {guild.icon}}`
-    </Accordion>
+    <Frame>
+      <img
+        src="/images/image31[1].png"
+        alt="Image31[1]"
+        title="Image31[1]"
+      />
+    </Frame>
+  </Accordion>
 
-    <Accordion title="Buttons">
-        Add interactive buttons to your message.
-        - **Types:** `Blurple`, `Green`, `Grey`, `Red`, or a direct link.
-        - **Syntax:** `{button: label && style_or_url && emoji && disabled}`
-        - **Example:** `{button: Support Shell && https://discord.gg/greed && 🛠️}`
-    </Accordion>
+  <Accordion title="Fields">
+    Add organized rows of data. You can include `inline` at the end to place fields side-by-side.
+
+    - **Syntax:** `{field: name && value && inline}`
+    - **Example:** `{field: User ID && {user.id} && inline}`
+      <Frame>
+        ![Image9\[1\]](/images/image9[1].png)
+      </Frame>
+
+    <Tip>
+      You can also use the plural `{fields: ...}` node to define multiple fields at once: `{fields: name: F1 && value: V1 && name: F2 && value: V2}`
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Footer">
+    Configure the small text and icon at the very bottom.
+
+    - **Syntax:** `{footer: text && icon}`
+    - **Example:** `{footer: Sent by {user.name} && {guild.icon}}`
+      <Frame>
+        ![Image8\[1\]](/images/image8[1].png)
+      </Frame>
+  </Accordion>
+
+  <Accordion title="Buttons">
+    Add interactive buttons to your message.
+
+    - **Types:** `Blurple`, `Green`, `Grey`, `Red`, or a direct link.
+    - **Syntax:** `{button: label && style_or_url && emoji && disabled}`
+    - **Example:** `{button: Support Shell && https://discord.gg/greed && emoji: 🛠️}`
+      <Frame>
+        ![Image7\[1\]](/images/image7[1].png)
+      </Frame>
+  </Accordion>
 </AccordionGroup>
 
 ## Mixing Text and Embeds
@@ -77,6 +105,10 @@ By default, greed attempts to identify if you are sending a raw text message or 
 ```javascript Template
 {embed}$v{title: Welcome!}$v{description: Glad you joined us, {user.mention}!}
 ```
+
+<Frame>
+  ![Image4\[3\]](/images/image4[3].png)
+</Frame>
 
 ## Tips & Tricks
 

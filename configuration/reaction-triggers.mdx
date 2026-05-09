@@ -18,13 +18,16 @@ Add a new trigger by specifying the keyword and the emoji(s) you want greed to a
 ,autoreact add (keyword) (emoji)
 ```
 
-
 ```javascript Example
-,autoreact add "good morning" ☕ ☀️
+,autoreact add shadow 💀
 ,autoreact add greed 🔥
 ```
 
 </CodeGroup>
+
+<Frame>
+  ![Image4\[3\]](/images/image4[3].png)
+</Frame>
 
 <Info>
   **Multiple Emojis**: You can provide multiple emojis in a single trigger, and greed will add all of them.
@@ -40,6 +43,7 @@ Add a new trigger by specifying the keyword and the emoji(s) you want greed to a
   <Accordion title="Partial Matching">
     By default, greed will react if the keyword is found **anywhere** within the message content.
   </Accordion>
+
   <Accordion title="Exact Phrase (Quotes)">
     If your keyword contains spaces (e.g., "hello world"), you **must** wrap it in "quotes" for it to be recognized as a single trigger.
   </Accordion>
@@ -59,6 +63,7 @@ Whitelisting allows you to control where and for whom triggers are active.
     ,autoreact channels list
     ```
   </Accordion>
+
   <Accordion title="Role Whitelisting">
     Only react to messages from members with specific roles.
 

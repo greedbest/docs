@@ -1,7 +1,7 @@
 ---
-title: Variables
+title: "Variables"
 description: "A complete reference of all dynamic placeholders available in greed."
-icon: asterisk
+icon: "asterisk"
 ---
 
 Variables allow you to inject dynamic data into your messages and embeds. They are automatically replaced by the bot based on the current context.
@@ -11,9 +11,9 @@ Variables allow you to inject dynamic data into your messages and embeds. They a
 </Info>
 
 <Tabs>
-  <Tab title="User & Member">
+  <Tab title="User & Member" icon="align-horizontal-space-between">
     | Variable | Output |
-    | :--- | :--- |
+    | :-- | :-- |
     | `{user}` | Shortcut for the user's global username. |
     | `{user.id}` | The user's unique Discord ID. |
     | `{user.mention}` | Mentions the user (e.g., @adam). |
@@ -32,10 +32,9 @@ Variables allow you to inject dynamic data into your messages and embeds. They a
     | `{user.roles}` | List of mentions for all roles held. |
     | `{user.nick}` | Server-specific nickname. |
   </Tab>
-
   <Tab title="Server (Guild)">
     | Variable | Output |
-    | :--- | :--- |
+    | :-- | :-- |
     | `{guild.id}` | The server's unique ID. |
     | `{guild.name}` | The name of the server. |
     | `{guild.mention}` | Text name of the server. |
@@ -48,10 +47,9 @@ Variables allow you to inject dynamic data into your messages and embeds. They a
     | `{guild.created_at}` | Relative age of the server. |
     | `{guild.created_at_date}` | YYYY-MM-DD creation date. |
   </Tab>
-
   <Tab title="Channel">
     | Variable | Output |
-    | :--- | :--- |
+    | :-- | :-- |
     | `{channel.id}` | The current channel's ID. |
     | `{channel.mention}` | Mentions the channel (e.g., #general). |
     | `{channel.name}` | The name of the channel. |
@@ -60,12 +58,13 @@ Variables allow you to inject dynamic data into your messages and embeds. They a
     | `{channel.is_thread}` | Returns "Yes" or "No". |
     | `{channel.created_at}` | Relative creation time. |
   </Tab>
-
   <Tab title="Last.fm">
-    <Tip>These are specifically available for Last.fm commands and custom FM embeds.</Tip>
+    <Tip>
+      These are specifically available for Last.fm commands and custom FM embeds.
+    </Tip>
 
     | Variable | Output |
-    | :--- | :--- |
+    | :-- | :-- |
     | `{track.name}` | Title of the current track. |
     | `{track.url}` | Last.fm link to the track. |
     | `{track.duration}` | Length of the track (MM:SS). |
@@ -79,10 +78,9 @@ Variables allow you to inject dynamic data into your messages and embeds. They a
     | `{user.plays}` | Your total Last.fm scrobbles. |
     | `{scrobbles}` | Shortcut for total scrobbles. |
   </Tab>
-
   <Tab title="Advanced & Contextual">
     | Context | Variable | Output |
-    | :--- | :--- | :--- |
+    | :-- | :-- | :-- |
     | **Moderation** | `{reason.value}` | The reason provided for the action. |
     | **Moderation** | `{time.value}` | The duration of the punishment. |
     | **Levels** | `{level}` | The user's new level. |
@@ -97,10 +95,14 @@ Variables allow you to inject dynamic data into your messages and embeds. They a
 ## Functional Variables
 
 ### Lowercase
+
 Convert any variable output to all lowercase letters.
+
 - **Syntax:** `{lower(variable.name)}`
-- **Example:** `{lower(guild.name)}` -> `greed support`
+- **Example:** `{lower(guild.name)}` -\> `greed support`
 
 ### Target User
+
 In moderation or interaction contexts, use `target_user` to refer to the person being acted upon.
+
 - `{target_user.name}`, `{target_user.mention}`, `{target_user.id}`

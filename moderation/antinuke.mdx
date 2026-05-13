@@ -29,11 +29,7 @@ By default, only the **server owner** can manage the antinuke configuration. Usi
 </CodeGroup>
 
 <Frame>
-  <img
-    src="/images/image[1]-1.png"
-    alt="Image[1] 1"
-    title="Image[1] 1"
-  />
+  ![Image\[1\] 1](/images/image[1]-1.png)
 </Frame>
 
 To **remove** an antinuke admin, you simply use the same `,antinuke admin ` command.
@@ -76,6 +72,10 @@ By default, **everyone** is subject to being affected by the antinuke. To exempt
 
 </CodeGroup>
 
+<Frame>
+  ![Image\[1\]](/images/image[1].png)
+</Frame>
+
 To **remove** users from the whitelist, simply use the same  `,antinuke whitelist` command.
 
 <CodeGroup>
@@ -90,6 +90,10 @@ To **remove** users from the whitelist, simply use the same  `,antinuke whitelis
 
 </CodeGroup>
 
+<Frame>
+  ![Image2\[1\]](/images/image2[1].png)
+</Frame>
+
 You can view all whitelisted users by using the `,antinuke list` command.
 
 ## Configuring the antinuke
@@ -100,7 +104,7 @@ Configure the antinuke simply by using these commands. Use `,antinuke` to view t
 
 Antinuke has various modules that you can configure to protect your server.
 
-### Available Modules
+### Available Module
 
 <AccordionGroup>
   <Accordion title="Administrative Actions">
@@ -115,10 +119,10 @@ Antinuke has various modules that you can configure to protect your server.
     - **Usage Example:**
       <CodeGroup>
       ```javascript Command
-      ,antinuke module guildupdate threshold 1
+      ,antinuke guildupdate (status) [flags]
       ```
       ```javascript Example
-      ,antinuke module webhooks punishment ban
+      ,antinuke guildupdate on (flags)
       ```
       </CodeGroup>
   </Accordion>
@@ -133,10 +137,10 @@ Antinuke has various modules that you can configure to protect your server.
     - **Usage Example:**
       <CodeGroup>
       ```javascript Command
-      ,antinuke module ban threshold 3
+      ,antinuke ban (status) [flag]
       ```
       ```javascript Example
-      ,antinuke module kick punishment kick
+      ,antinuke ban on --do ban --threshold 3 --command on
       ```
       </CodeGroup>
   </Accordion>
@@ -149,10 +153,10 @@ Antinuke has various modules that you can configure to protect your server.
     - **Usage Example:**
       <CodeGroup>
       ```javascript Command
-      ,antinuke module channeldelete threshold 2
+      ,antinuke channel (status) [flags]
       ```
       ```javascript Example
-      ,antinuke module roledelete punishment ban
+      ,antinuke channel on --do kick --threshold 5
       ```
       </CodeGroup>
   </Accordion>
@@ -167,10 +171,10 @@ Antinuke has various modules that you can configure to protect your server.
     - **Usage Example:**
       <CodeGroup>
       ```javascript Command
-      ,antinuke module invitedelete threshold 5
+      ,antinuke invite (status) [flags]
       ```
       ```javascript Example
-      ,antinuke module soundboardcreate threshold 3
+      ,antinuke invite on (flags)
       ```
       </CodeGroup>
   </Accordion>

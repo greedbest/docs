@@ -112,23 +112,20 @@
       {
         "label": "Discord",
         "href": "https://discord.gg/greed"
+      },
+      {
+        "href": "https://greed.best/embeds",
+        "label": "embed"
       }
     ]
   },
-  "favicon": "/assets/greed-avatar.png",
+  "favicon": {
+    "light": "/assets/greed-avatar.png",
+    "dark": "/assets/greed-avatar.png"
+  },
   "footer": {
     "socials": {
       "discord": "https://discord.com/invite/greed"
-    }
-  },
-  "fonts": {
-    "family": "Plus Jakarta Sans",
-    "weight": 500,
-    "heading": {
-      "family": "Plus Jakarta Sans"
-    },
-    "body": {
-      "family": "Plus Jakarta Sans"
     }
   }
 }
